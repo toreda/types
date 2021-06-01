@@ -1,0 +1,36 @@
+{
+	"name": "@toreda/types",
+	"version": "0.0.1",
+	"public": true,
+	"description": "Toreda's commonly used typescript aliases and mapped types.",
+	"main": "./src/index",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/toreda/types.git"
+	},
+	"keywords": [
+		"types",
+		"typescript"
+	],
+	"author": "Toreda, Inc.",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/toreda/types/issues"
+	},
+	"homepage": "https://github.com/toreda/types#readme",
+	"sideEffects": false,
+	"dependencies": {},
+	"devDependencies": {
+		"@toreda/eslint-config": "^2.1.0",
+		"@toreda/prettier-config": "^1.0.1",
+		"@typescript-eslint/eslint-plugin": "^4.26.0",
+		"@typescript-eslint/parser": "^4.26.0",
+		"@typescript-eslint/typescript-estree": "^4.26.0",
+		"eslint": "^7.27.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-prettier": "^3.4.0",
+		"prettier": "^2.3.0",
+		"typescript": "^4.3.2"
+	},
+	"prettier": "@toreda/prettier-config"
+}
