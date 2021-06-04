@@ -3,7 +3,14 @@
 	"version": "0.0.1",
 	"public": true,
 	"description": "Toreda's commonly used typescript aliases and mapped types.",
-	"main": "./src/index",
+	"main": "./dist/index.js",
+	"typings": "./dist/index.d.ts",
+	"scripts": {
+		"lint": "yarn eslint ./src/** --quiet",
+		"lint:nofix": "yarn lint",
+		"lint:fix": "yarn eslint src/**/*.{js,ts,tsx} --quiet --fix",
+		"build": "yarn gulp"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/toreda/types.git"
@@ -19,9 +26,13 @@
 	},
 	"homepage": "https://github.com/toreda/types#readme",
 	"sideEffects": false,
-	"dependencies": {},
+	"dependencies": {
+		"@toreda/build-tools": "^0.1.15",
+		"@types/node": "^15.6.2",
+		"gulp": "^4.0.2"
+	},
 	"devDependencies": {
-		"@toreda/eslint-config": "^2.1.0",
+		"@toreda/eslint-config": "^2.2.0",
 		"@toreda/prettier-config": "^1.0.1",
 		"@typescript-eslint/eslint-plugin": "^4.26.0",
 		"@typescript-eslint/parser": "^4.26.0",

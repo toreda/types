@@ -1,4 +1,4 @@
-import {NotNull, Primitive} from './aliases';
+import {Primitive} from './aliases';
 
 export type DeepPartial<T> = Expand<
 	{
@@ -7,7 +7,7 @@ export type DeepPartial<T> = Expand<
 >;
 export type DeepRequired<T> = Expand<
 	{
-		[key in keyof T]-?: T[key] extends Primitive ? NotNull<T[key]> : DeepRequired<T[key]>;
+		[key in keyof T]-?: T[key] extends Primitive ? NonNullable<T[key]> : DeepRequired<T[key]>;
 	}
 >;
 
@@ -18,3 +18,11 @@ export type DeepExpand<T> = T extends Primitive
 	: T extends infer obj
 	? {[key in keyof obj]: DeepExpand<obj[key]>}
 	: never;
+
+export type LiteralToPrimitive<SubOption> = SubOption extends boolean
+	? boolean
+	: SubOption extends number
+	? number
+	: SubOption extends string
+	? string
+	: SubOption;

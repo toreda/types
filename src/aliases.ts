@@ -1,13 +1,12 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type ANY = any;
 
-export type AnyFunction<T = unknown> = () => T;
-
-export type AnyObj<T = unknown> = Record<string, T>;
-
-export type Constructor = {new (...args: ANY[]): ANY};
-
-export type NotNull<T> = T extends null | undefined ? never : T;
+export type jsonType = ANY;
 
 export type Primitive = bigint | boolean | null | number | string | symbol | undefined;
 
-export type UnavoidableAny = any;
+export type AnyObj<T = unknown> = Record<string, T>;
+
+export type AnyFunc<T = unknown> = (...args: ANY[]) => T;
+
+export type Constructor<T = unknown> = {new (...args: ANY[]): T};
