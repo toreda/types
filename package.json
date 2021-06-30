@@ -1,6 +1,6 @@
 {
 	"name": "@toreda/types",
-	"version": "0.0.1",
+	"version": "0.0.3",
 	"public": true,
 	"description": "Toreda's commonly used typescript aliases and mapped types.",
 	"main": "./dist/index.js",
