@@ -9,6 +9,8 @@ export type AnyObj<T = unknown> = Record<string, T>;
 
 export type AnyFunc<T = unknown> = (...args: ANY[]) => T;
 
+export type ToStringable = {toString: () => string};
+
 export type Constructor<T = unknown> = {new (...args: ANY[]): T};
 
 export type Promisable<T = unknown> = T | Promise<T>;
