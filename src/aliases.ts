@@ -15,4 +15,8 @@ export type Constructor<T = unknown> = {new (...args: ANY[]): T};
 
 export type Promisable<T = unknown> = T | Promise<T>;
 
-export type Null<T = unknown> = T | null;
+export type Nullable<T = unknown> = T | null;
+
+export type CanBeNullOrUndefined<T = unknown> = T | null | undefined;
+
+export type Arrayable<T> = T | T[];
