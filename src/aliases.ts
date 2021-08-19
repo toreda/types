@@ -15,6 +15,8 @@ export type Constructor<T = unknown> = {new (...args: ANY[]): T};
 
 export type Promisable<T = unknown> = T | Promise<T>;
 
+export type Awaited<T = unknown> = T extends PromiseLike<infer U> ? U : T;
+
 export type Nullable<T = unknown> = T | null;
 
 export type CanBeNullOrUndefined<T = unknown> = T | null | undefined;
