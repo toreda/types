@@ -1,4 +1,4 @@
-import {Primitive} from './aliases';
+import {Primitive} from './alias';
 
 export type DeepPartial<T> = Expand<
 	{

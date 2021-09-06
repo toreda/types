@@ -1,36 +1,24 @@
-import {series, src} from 'gulp';
+//const eslint = require('gulp-eslint');
+import gulp, {series} from 'gulp';
 
-import {BuildTools} from '@toreda/build-tools';
-import {EventEmitter} from 'events';
-const eslint = require('gulp-eslint');
+import del from 'del';
+import ts from 'gulp-typescript';
 
-const build: BuildTools = new BuildTools(new EventEmitter());
-
-function runLint() {
-	return (
-		src(['src/**'])
-			// eslint() attaches the lint output to the "eslint" property
-			// of the file object so it can be used by other modules.
-			.pipe(eslint())
-			// eslint.format() outputs the lint results to the console.
-			// Alternatively use eslint.formatEach() (see Docs).
-			.pipe(eslint.format())
-			// To have the process exit with an error code (1) on
-			// lint error, return the stream and pipe to failAfterError last.
-			.pipe(eslint.failAfterError())
-	);
-}
+const tsc = ts.createProject('tsconfig.json');
 
 function createDist() {
-	return build.steps.createDir('./dist');
+	// Hack to create folder structures without actually reading files.
+	// Nested folders need to be created in their nested order.
+	return gulp.src('*.*', {read: false}).pipe(gulp.dest('./dist'));
 }
 
 function cleanDist() {
-	return build.steps.cleaner.dir('./dist');
+	return del(`dist/**`, {force: true});
 }
 
 function buildSrc() {
-	return build.run.typescript('./dist', 'tsconfig.json');
+	// Build typescript sources and output them in './dist'.
+	return tsc.src().pipe(tsc()).js.pipe(gulp.dest('dist'));
 }
 
-exports.default = series(createDist, cleanDist, runLint, buildSrc);
+exports.default = series(createDist, cleanDist, buildSrc);
