@@ -1,6 +1,6 @@
 {
 	"name": "@toreda/types",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"public": true,
 	"description": "Toreda's commonly used typescript aliases and mapped types.",
 	"main": "./dist/index.js",
@@ -17,7 +17,8 @@
 	},
 	"keywords": [
 		"types",
-		"typescript"
+		"typescript",
+		"toreda"
 	],
 	"author": "Toreda, Inc.",
 	"license": "MIT",
@@ -26,9 +27,7 @@
 	},
 	"homepage": "https://github.com/toreda/types#readme",
 	"sideEffects": false,
-	"dependencies": {
-		"del": "^6.0.0"
-	},
+	"dependencies": {},
 	"devDependencies": {
 		"@swc/core": "^1.2.84",
 		"@swc/wasm": "^1.2.84",
@@ -40,6 +39,7 @@
 		"prettier": "^2.3.2",
 		"ts-node": "^10.2.1",
 		"ts-register": "^0.1.0",
+		"del": "^6.0.0",
 		"typescript": "^4.4.2"
 	},
 	"prettier": "@toreda/prettier-config"
