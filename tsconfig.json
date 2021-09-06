@@ -1,6 +1,6 @@
 {
 	"exclude": ["node_modules", "**/*.spec.ts", "tests", "dist/**"],
-	"include": ["**/src/index.ts"],
+	"include": ["**/src/index.ts", "./src/**.ts"],
 	"filesGlob": ["./src/**.ts", "!./node_modules/**"],
 	"compilerOptions": {
 		"baseUrl": ".",
@@ -16,7 +16,7 @@
 		"outDir": "./dist",
 		"preserveConstEnums": true,
 		"removeComments": false,
-		"rootDir": ".",
+		"rootDir": "./src",
 		"strictBindCallApply": true,
 		"strictNullChecks": true,
 		"strictPropertyInitialization": true,
