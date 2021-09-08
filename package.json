@@ -1,12 +1,12 @@
 {
 	"name": "@toreda/types",
-	"version": "1.2.2",
+	"version": "1.3.0",
 	"public": true,
 	"description": "Toreda's commonly used typescript aliases and mapped types.",
 	"main": "./dist/index.js",
 	"typings": "./dist/index.d.ts",
 	"scripts": {
-		"lint": "yarn eslint ./src/** --quiet",
+		"lint": "yarn lint:nofix",
 		"lint:nofix": "yarn lint",
 		"lint:fix": "yarn eslint src/**/*.{js,ts,tsx} --quiet --fix",
 		"build": "yarn gulp"
