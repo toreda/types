@@ -24,12 +24,11 @@
  */
 
 /**
-
+ * Used in mapping strings to other types.
  *
- * @category Core
+ * @category Type Mapping
  */
 export interface TypeMap {
-	// for mapping from strings to types
 	string: string;
 	number: number;
 	boolean: boolean;

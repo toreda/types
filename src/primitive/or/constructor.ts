@@ -26,6 +26,9 @@ import {ANY} from '../../any';
 import {TypeMap} from '../../type/map';
 
 /**
- * @category Types
+ * Type signature for primitives or objects with unique constructors used
+ * in run-time type matching and identification.
+ *
+ * @category Signatures
  */
 export type PrimitiveOrConstructor = {new (...args: ANY[]): ANY} | keyof TypeMap;

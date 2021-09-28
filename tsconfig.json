@@ -1,6 +1,6 @@
 {
 	"exclude": ["node_modules", "**/*.spec.ts", "tests", "dist/**"],
-	"include": ["**/src/index.ts", "./src/**.ts"],
+	"include": ["./src/index.ts", "./src/**.ts", "./src/**/*.ts"],
 	"filesGlob": ["./src/**.ts", "!./node_modules/**"],
 	"compilerOptions": {
 		"baseUrl": ".",

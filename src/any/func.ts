@@ -27,6 +27,6 @@ import {ANY} from '../any';
 /**
  * Alias for basic sync or async functions.
  *
- * @category Types
+ * @category Alias
  */
 export type AnyFunc<T = unknown> = (...args: ANY[]) => T;

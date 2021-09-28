@@ -26,6 +26,9 @@
 import {ANY} from './any';
 
 /**
- * @category Types
+ * Type signature for objects with a unique class constructor. Used in runtime
+ * type matching and identification.
+ *
+ * @category Signatures
  */
 export type Constructor<T = unknown> = {new (...args: ANY[]): T};

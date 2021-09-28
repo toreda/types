@@ -24,6 +24,6 @@
  */
 
 /**
- * @category Indicator Types
+ * @category Signatures
  */
 export type Nullable<T = unknown> = T | null;

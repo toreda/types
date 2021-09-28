@@ -24,6 +24,9 @@
  */
 
 /**
- * @category Signatures
+ * Basic key->value data type for Toreda Data objects and
+ * simple objects created from JSON.
+ *
+ * @category Alias
  */
-export type Arrayable<T> = T | T[];
+export type Data = Record<string, unknown>;

@@ -24,6 +24,6 @@
  */
 
 /**
- * @category Aliases
+ * @category Signatures
  */
 export type NullOrUndefined<T = unknown> = T | null | undefined;

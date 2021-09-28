@@ -26,6 +26,6 @@
 /**
  * Type alias for simple objects.
  *
- * @category Types
+ * @category Alias
  */
 export type AnyObj<T = unknown> = Record<string, T>;

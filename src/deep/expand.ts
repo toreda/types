@@ -25,7 +25,7 @@
 import {Primitive} from '../primitive';
 
 /**
- * @category Deep
+ * @category Signatures
  */
 export type DeepExpand<T> = T extends Primitive
 	? T
