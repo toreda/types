@@ -16,5 +16,6 @@ export {NullOrUndefined} from './null/or/undefined';
 export {Primitive} from './primitive';
 export {PrimitiveOrConstructor} from './primitive/or/constructor';
 export {Promisable} from './promisable';
+export {Records} from './records';
 export {Stringable} from './stringable';
 export {TypeMap} from './type/map';
