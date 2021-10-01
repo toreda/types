@@ -18,7 +18,7 @@ function cleanDist() {
 
 function buildSrc() {
 	// Build typescript sources and output them in './dist'.
-	return src(['src/**.ts', 'src/**/*.ts']).pipe(tsc()).pipe(dest('dist'));
+	return src(['./src/index.ts', 'src/**.ts', 'src/**/*.ts']).pipe(tsc()).pipe(dest('dist'));
 }
 
 exports.default = series(createDist, cleanDist, buildSrc);

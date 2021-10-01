@@ -3,6 +3,7 @@ export {AnyFunc} from './any/func';
 export {AnyObj} from './any/obj';
 export {Arrayable} from './arrayable';
 export {Awaited} from './awaited';
+export {BitMask} from './bit/mask';
 export {Constructor} from './constructor';
 export {Data} from './data';
 export {DeepExpand} from './deep/expand';

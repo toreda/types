@@ -1,7 +1,6 @@
 demo
 node_modules
 tests
-docs
 *.code-workspace
 coverage
 yarn-debug.log
@@ -9,3 +8,9 @@ yarn-error.log
 test-report.xml
 .github
 examples
+gulpfile.ts
+src/
+sonar-project.properties
+jest.config.js
+.gitattributes
+.eslintrc.js
