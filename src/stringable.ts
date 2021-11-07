@@ -24,7 +24,7 @@
  */
 
 /**
- * Signals that an object supports stringifying its contents and includes a toString
+ * Stringable objects support stringifying its contents and includes a toString
  *  method to do so. Used in conjunction with other types.
  *
  * @category Attribute Types

@@ -1,14 +1,14 @@
-# Changelog
-All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+# [Unreleased]
 
-## [Unreleased]
+# [2.4.0] - 2021-11-07
 
-## [2.0.0] - 2021-09-27
+## Added
+* `Optional<T, K>` generic type which takes an interface `T` to make all properties optional except for one or more keys provided for `k`. For example: `Optional<MyInterface, 'one' | 'two'>` makes all properties on interface `MyInterface` optional except for keys which exactly match `one` or `two`.
 
-# Changed
+# [2.0.0] - 2021-09-27
+
+## Changed
 
 * Moved each type from `./src/aliases` to individual files with 1 export each:
 * `CanBeNullOrUndefined` is now `NullOrUndefined` and moved from `./src/aliases.ts` to `./src/null/or/undefined.ts`.
@@ -28,9 +28,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Moved `Promisable<T = unknown>` from `./src/aliases.ts` to `./src/promisable.ts`.
 * Moved `Stringable<T = unknown>` from `./src/aliases.ts` to `./src/stringable.ts`.
 
-## [1.2.2]
+# [1.2.2]
 
 [Unreleased]: https://github.com/toreda/types/releases/compare/v1.2.2...HEAD
+[2.4.0]: https://github.com/toreda/types/releases/compare/v2.0.0...v2.4.0
 [2.0.0]: https://github.com/toreda/types/releases/compare/v1.2.2...v2.0.0
 [1.2.2]: https://github.com/toreda/types/releases/compare/v0.0.0...v1.2.2
 [0.0.0]: https://github.com/toreda/types/releases

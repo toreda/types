@@ -26,10 +26,11 @@ import {Expand} from '../expand';
 import {Primitive} from '../primitive';
 
 /**
+ * Recursively change properties to optional on the returned type. Partial<T>
+ * marks top-level type `T` properties optional, but does not recursively mark
+ * children of `T` or children of children, and so on.
  * @category Deep
  */
-export type DeepPartial<T> = Expand<
-	{
-		[key in keyof T]?: T[key] extends Primitive ? T[key] : DeepPartial<T[key]>;
-	}
->;
+export type DeepPartial<T> = Expand<{
+	[key in keyof T]?: T[key] extends Primitive ? T[key] : DeepPartial<T[key]>;
+}>;

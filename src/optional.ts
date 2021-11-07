@@ -24,8 +24,8 @@
  */
 
 /**
- * Expressive type alias for basic Toreda data object types.
- *
- * @category Expressive Types
+ * Make all top-level `InterfaceT` properties optional except the key name or key names
+ * provided in `ExceptKey`.
  */
-export type Data = Record<string, unknown>;
+export type Optional<InterfaceT, ExceptKey extends keyof InterfaceT> = Omit<InterfaceT, ExceptKey> &
+	Partial<InterfaceT>;

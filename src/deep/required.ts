@@ -28,8 +28,6 @@ import {Primitive} from '../primitive';
 /**
  * @category Deep
  */
-export type DeepRequired<T> = Expand<
-	{
-		[key in keyof T]-?: T[key] extends Primitive ? NonNullable<T[key]> : DeepRequired<T[key]>;
-	}
->;
+export type DeepRequired<T> = Expand<{
+	[key in keyof T]-?: T[key] extends Primitive ? NonNullable<T[key]> : DeepRequired<T[key]>;
+}>;

@@ -14,6 +14,7 @@ export {Guarded} from './guarded';
 export {LiteralToPrimitive} from './literal/to/primitive';
 export {Nullable} from './nullable';
 export {NullOrUndefined} from './null/or/undefined';
+export {Optional} from './optional';
 export {Primitive} from './primitive';
 export {PrimitiveOrConstructor} from './primitive/or/constructor';
 export {Promisable} from './promisable';

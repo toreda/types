@@ -24,7 +24,7 @@
  */
 
 /**
- * Used in mapping strings to other types.
+ * Map strings to other types.
  *
  * @category Type Mapping
  */
