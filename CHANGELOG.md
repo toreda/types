@@ -1,10 +1,14 @@
 
 # [Unreleased]
 
-# [2.4.0] - 2021-11-07
+
+# [2.4.1] - 2021-11-08
 
 ## Added
 * `Optional<T, K>` generic type which takes an interface `T` to make all properties optional except for one or more keys provided for `k`. For example: `Optional<MyInterface, 'one' | 'two'>` makes all properties on interface `MyInterface` optional except for keys which exactly match `one` or `two`.
+
+## Removed
+* `gulp-eslint` package dependency.
 
 # [2.0.0] - 2021-09-27
 
