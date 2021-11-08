@@ -22,10 +22,11 @@
  * 	SOFTWARE.
  *
  */
+
 import {Primitive} from '../primitive';
 
 /**
- * @category Signatures
+ * @category Deep
  */
 export type DeepExpand<T> = T extends Primitive
 	? T

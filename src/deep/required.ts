@@ -22,6 +22,7 @@
  * 	SOFTWARE.
  *
  */
+
 import {Expand} from '../expand';
 import {Primitive} from '../primitive';
 

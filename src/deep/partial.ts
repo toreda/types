@@ -1,4 +1,3 @@
-import {Expand} from '../expand';
 /**
  *	MIT License
  *
@@ -23,12 +22,15 @@ import {Expand} from '../expand';
  * 	SOFTWARE.
  *
  */
+
+import {Expand} from '../expand';
 import {Primitive} from '../primitive';
 
 /**
  * Recursively change properties to optional on the returned type. Partial<T>
  * marks top-level type `T` properties optional, but does not recursively mark
  * children of `T` or children of children, and so on.
+ *
  * @category Deep
  */
 export type DeepPartial<T> = Expand<{
