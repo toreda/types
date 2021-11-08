@@ -39,8 +39,6 @@ jobs:
       - name: Install Dependencies
 #        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn install
-      - name: Run Tests
-        run: yarn test
       - name: Build Source
         run: yarn build
       - name: Sonarcloud
