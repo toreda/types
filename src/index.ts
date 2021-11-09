@@ -9,6 +9,7 @@ export {Data} from './data';
 export {DeepExpand} from './deep/expand';
 export {DeepPartial} from './deep/partial';
 export {DeepRequired} from './deep/required';
+export {Depromisify} from './depromisify';
 export {Expand} from './expand';
 export {Guarded} from './guarded';
 export {LiteralToPrimitive} from './literal/to/primitive';
