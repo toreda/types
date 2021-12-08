@@ -24,6 +24,6 @@
  */
 
 /**
- * @category Signatures
+ * @category Object API
  */
 export type Arrayable<T> = T | T[];

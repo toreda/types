@@ -1,6 +1,10 @@
 
 # [Unreleased]
 
+# [2.5.0] - 2021-11-18
+## Added
+* `IdFn` type that defines expected id properties as a string, helper function, or `Strong` type.
+* `Cacheable` interface defining required properties for objects to be compatible with Toreda Cache classes.
 
 # [2.4.1] - 2021-11-08
 

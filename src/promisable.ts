@@ -24,6 +24,6 @@
  */
 
 /**
- * @category Attribute Types
+ * @category Object API
  */
 export type Promisable<T = unknown> = T | Promise<T>;

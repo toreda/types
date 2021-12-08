@@ -14,6 +14,7 @@ export {Expand} from './expand';
 export {Guarded} from './guarded';
 export {LiteralToPrimitive} from './literal/to/primitive';
 export {Nullable} from './nullable';
+export {LifecycleListener} from './lifecycle/listener';
 export {NullOrUndefined} from './null/or/undefined';
 export {Optional} from './optional';
 export {Primitive} from './primitive';
