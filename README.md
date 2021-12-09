@@ -14,7 +14,6 @@ Type definitions for [**Toreda**](https://www.toreda.com) TypeScript projects.
 
 - [`@toreda/types`](#toredatypes)
 - [Contents](#contents)
-- [How to Use](#how-to-use)
 - [Install](#install)
 	- [Yarn](#yarn)
 	- [NPM](#npm)
@@ -24,8 +23,6 @@ Type definitions for [**Toreda**](https://www.toreda.com) TypeScript projects.
 
 
 &nbsp;
-# How to Use
-`@toreda/types`
 
 # Install
 
@@ -49,6 +46,6 @@ $ yarn add @toreda/types --D
 &nbsp;
 
 ## Copyright
-Copyright &copy; 2019 - 2021 Toreda, Inc. All Rights Reserved.
+Copyright &copy; 2019 - 2022 Toreda, Inc. All Rights Reserved.
 
 https://www.toreda.com
