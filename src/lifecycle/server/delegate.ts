@@ -23,43 +23,36 @@
  *
  */
 
-import type {LifecycleClient} from '../client';
 import type {LifecycleListener} from '../listener';
+import type {LifecycleServer} from '../server';
 
 /**
+ * Delegate interface for server-side classes.
+ *
  * @category Lifecycle
  */
-export interface LifecycleClientDelegate {
-	lifecycle: LifecycleClient;
-	/** Entered 'init' phase - creating all necessary instances. **/
+export interface LifecycleServerDelegate {
+	lifecycle: LifecycleServer;
+	/** Starting 'init' lifecycle phase. */
 	willInit?: LifecycleListener;
-	onInit: LifecycleListener;
+	/** Server completed 'init' lifecycle phase. */
 	didInit?: LifecycleListener;
-	/** Client completed the 'load' phase' and will begin load phase next.*/
+	/** Server completed 'load' lifecycle phase. */
 	didLoad?: LifecycleListener;
-	/** Client is now loading resources, assets, and packages. */
-	onLoad: LifecycleListener;
+	/** Server will enter 'load' lifecycle phase. */
 	willLoad?: LifecycleListener;
-	/** Entered 'ready' phase - all systems are running & ready. */
-	willBecomeReady?: LifecycleListener;
-	onReady: LifecycleListener;
-	didBecomeReady?: LifecycleListener;
-	/** Client systems are starting and will enter 'start' phase. */
+	/** Server will enter 'start' lifecycle phase but is not yet ready. */
 	willStart?: LifecycleListener;
-	onStart: LifecycleListener;
+	/** Server completed 'start' lifecycle phase. */
 	didStart?: LifecycleListener;
-	/** Client received memory warning from OS and cleared cached resources. */
-	onMemoryWarning?: LifecycleListener;
-	/** Client will enter 'pause' phase soon. Prepare to pause. */
-	willPause?: LifecycleListener;
-	/** Client entered 'pause' phase. All systems should now be paused. */
-	didUnpause?: LifecycleListener;
-	/** Client will enter 'stop' phase sometime soon. Prepare to stop systems. */
+	/** Server entered the 'ready' lifecycle phase and is now fully available. */
+	willBecomeReady?: LifecycleListener;
+	/** Server entered 'ready' lifecycle phase and is now fully available. */
+	didBecomeReady?: LifecycleListener;
+	/** Server will enter the stop lifecycle phase soon. */
 	willStop?: LifecycleListener;
-	/** Client entered 'stop' phase - client has stopped running. All systems & timers are now stopped. */
-
-	willLoseFocus?: LifecycleListener;
-	didLoseFocus?: LifecycleListener;
-	didGainFocus?: LifecycleListener;
-	willGainFocus?: LifecycleListener;
+	/** Server entered the stop lifecycle phase. */
+	didStop?: LifecycleListener;
+	/** Server will shutdown completely. */
+	willShutdown?: LifecycleListener;
 }

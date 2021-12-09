@@ -23,13 +23,43 @@
  *
  */
 
+import type {LifecycleClientDelegate} from '../client/delegate';
+import type {LifecycleServerDelegate} from '../server/delegate';
+import {lifecyclePhaseListenerName} from '../phase/listener/name';
+
 /**
- * Wrapper for Fate data to provide a consistent interface
- * for responses containing multiple records.
  *
- * @category Data
+ * @param phase
+ * @param objects
+ * @returns
+ *
+ * @category Lifecycle
  */
-export interface Records<T> {
-	records: T[];
-	recordCount: number;
+export async function lifecycleForEach(
+	objects: LifecycleClientDelegate[] | LifecycleServerDelegate,
+	phase: string
+): Promise<boolean> {
+	const listenerName = lifecyclePhaseListenerName(phase);
+
+	if (!listenerName) {
+		return false;
+	}
+
+	if (!Array.isArray(objects)) {
+		return false;
+	}
+
+	let executionCount = 0;
+	for (const o of objects) {
+		if (typeof o[listenerName] !== 'function') {
+			continue;
+		}
+
+		const result = await o[listenerName]();
+		if (result) {
+			executionCount++;
+		}
+	}
+
+	return executionCount > 0;
 }

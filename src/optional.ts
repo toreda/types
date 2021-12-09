@@ -1,7 +1,7 @@
 /**
  *	MIT License
  *
- *	Copyright (c) 2019 - 2021 Toreda, Inc.
+ *	Copyright (c) 2019 - 2022 Toreda, Inc.
  *
  *	Permission is hereby granted, free of charge, to any person obtaining a copy
  *	of this software and associated documentation files (the "Software"), to deal
@@ -26,6 +26,8 @@
 /**
  * Make all top-level `InterfaceT` properties optional except the key name or key names
  * provided in `ExceptKey`.
+ *
+ * @category Expressive Types
  */
 export type Optional<InterfaceT, ExceptKey extends keyof InterfaceT> = Omit<InterfaceT, ExceptKey> &
 	Partial<InterfaceT>;

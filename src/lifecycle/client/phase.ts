@@ -24,12 +24,28 @@
  */
 
 /**
- * Wrapper for Fate data to provide a consistent interface
- * for responses containing multiple records.
+ * Expressive type describing phase names used in client lifecycle flow.
  *
- * @category Data
+ * @category Lifecycle
  */
-export interface Records<T> {
-	records: T[];
-	recordCount: number;
-}
+export type LifecycleClientPhase =
+	| 'didBecomeReady'
+	| 'didGainFocus'
+	| 'didInit'
+	| 'didLoad'
+	| 'didLoseFocus'
+	| 'didStart'
+	| 'didUnpause'
+	| 'memoryWarning'
+	| 'onInit'
+	| 'onLoad'
+	| 'onReady'
+	| 'onStart'
+	| 'willBecomeReady'
+	| 'willGainFocus'
+	| 'willInit'
+	| 'willLoad'
+	| 'willLoseFocus'
+	| 'willPause'
+	| 'willStart'
+	| 'willStop';

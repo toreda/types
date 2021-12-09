@@ -1,7 +1,7 @@
 /**
  *	MIT License
  *
- *	Copyright (c) 2019 - 2021 Toreda, Inc.
+ *	Copyright (c) 2019 - 2022 Toreda, Inc.
  *
  *	Permission is hereby granted, free of charge, to any person obtaining a copy
  *	of this software and associated documentation files (the "Software"), to deal
@@ -31,7 +31,7 @@ import {Primitive} from '../primitive';
  * marks top-level type `T` properties optional, but does not recursively mark
  * children of `T` or children of children, and so on.
  *
- * @category Deep
+ * @category Object APIs
  */
 export type DeepPartial<T> = Expand<{
 	[key in keyof T]?: T[key] extends Primitive ? T[key] : DeepPartial<T[key]>;

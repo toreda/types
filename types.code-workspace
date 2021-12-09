@@ -13,5 +13,23 @@
 			"amatiasq.sort-imports",
 			"dbaeumer.vscode-eslint"
 		]
+	},
+	"settings": {
+		"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+		"typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+		"prettier.insertPragma": true,
+		"files.exclude": {
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"**/Thumbs.db": true,
+			"coverage/**": true,
+			"node_modules/**": true,
+			".github": true,
+			"test-report.xml": true,
+			"reports/**": true
+		}
 	}
 }

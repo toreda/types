@@ -1,23 +1,41 @@
-
-# `@toreda/types`
-
 [![Toreda](https://content.toreda.com/logo/toreda-logo.png)](https://www.toreda.com)
 
-[![Github](https://github.com/toreda/types/workflows/CI/badge.svg?branch=master)](https://github.com/toreda/types/actions) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=toreda_types&metric=coverage)](https://sonarcloud.io/dashboard?id=toreda_types) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=toreda_types&metric=alert_status)](https://sonarcloud.io/dashboard?id=toreda_types)
+![CI](https://img.shields.io/github/workflow/status/toreda/types/CI?style=for-the-badge) [![Coverage](https://img.shields.io/sonar/coverage/toreda_types?server=https%3A%2F%2Fsonarcloud.io&style=for-the-badge)](https://sonarcloud.io/dashboard?id=toreda_types) ![Sonar Quality Gate](https://img.shields.io/sonar/quality_gate/toreda_types?server=https%3A%2F%2Fsonarcloud.io&style=for-the-badge) ![GitHub issues](https://img.shields.io/github/issues/toreda/types?style=for-the-badge)
 
+![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/toreda/types/master?style=for-the-badge)
+![GitHub Release Date](https://img.shields.io/github/release-date/toreda/types?style=for-the-badge) ![license](https://img.shields.io/github/license/toreda/types?style=for-the-badge)
+# `@toreda/types`
 
 Type definitions for [**Toreda**](https://www.toreda.com) TypeScript projects.
 
 &nbsp;
-# Installation
 
-### Yarn
+# Contents
+
+- [`@toreda/types`](#toredatypes)
+- [Contents](#contents)
+- [How to Use](#how-to-use)
+- [Install](#install)
+	- [Yarn](#yarn)
+	- [NPM](#npm)
+- [Legal](#legal)
+	- [License](#license)
+	- [Copyright](#copyright)
+
+
+&nbsp;
+# How to Use
+`@toreda/types`
+
+# Install
+
+## Yarn
 ```bash
 $ yarn add @toreda/types --dev
 ```
 
 
-### NPM
+## NPM
 ```bash
 $ yarn add @toreda/types --D
 ```

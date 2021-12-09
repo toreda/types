@@ -23,13 +23,21 @@
  *
  */
 
+import type {LifecycleServerPhase} from './phase';
+
 /**
- * Wrapper for Fate data to provide a consistent interface
- * for responses containing multiple records.
- *
- * @category Data
+ * @category Lifecycle
  */
-export interface Records<T> {
-	records: T[];
-	recordCount: number;
-}
+export const lifecycleServerPhases = new Set<LifecycleServerPhase>([
+	'didBecomeReady',
+	'didInit',
+	'didLoad',
+	'didStop',
+	'didStart',
+	'willBecomeReady',
+	'willInit',
+	'willLoad',
+	'willShutdown',
+	'willStart',
+	'willStop'
+]);

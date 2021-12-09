@@ -1,7 +1,7 @@
 /**
  *	MIT License
  *
- *	Copyright (c) 2019 - 2021 Toreda, Inc.
+ *	Copyright (c) 2019 - 2022 Toreda, Inc.
  *
  *	Permission is hereby granted, free of charge, to any person obtaining a copy
  *	of this software and associated documentation files (the "Software"), to deal
@@ -34,12 +34,12 @@ module.exports = {
 		'coverage/',
 		'webpack.config.js'
 	],
-	testPathIgnorePatterns: ['/node_modules/'],
-	testEnvironment: 'node',
-	transform: {
-		'^.+\\.tsx?$': 'ts-jest'
-	},
-	testRegex: '(/__tests__/.*|(\\.|/)(spec))\\.ts$',
 	moduleFileExtensions: ['ts', 'js', 'json'],
-	testResultsProcessor: 'jest-sonar-reporter'
+	moduleNameMapper: {'^src/(.*)': '<rootDir>/src/$1'},
+	testEnvironment: 'node',
+	testPathIgnorePatterns: ['/node_modules/'],
+	testRegex: '(/__tests__/.*|(\\.|/)(spec))\\.ts$',
+	testResultsProcessor: 'jest-sonar-reporter',
+	transform: {'^.+\\.tsx?$': 'ts-jest', '^.+\\.jsx?$': 'babel-jest'},
+	transformIgnorePatterns: ['node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)']
 };

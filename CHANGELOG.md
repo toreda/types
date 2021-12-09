@@ -1,6 +1,12 @@
 
 # [Unreleased]
 
+# [2.6.0] - 2021-12-08
+## Added
+* `LifecycleServerDelegate` for server-side classes using lifecycles.
+* `LifecycleClientDelegate` for client-side classes using lifecycles.
+* `LifecyclePhaseId` as an expressive type to clarify the purpose of some name & id args used in lifecycle functions.
+
 # [2.5.0] - 2021-11-18
 ## Added
 * `IdFn` type that defines expected id properties as a string, helper function, or `Strong` type.

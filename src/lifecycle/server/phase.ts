@@ -24,12 +24,19 @@
  */
 
 /**
- * Wrapper for Fate data to provide a consistent interface
- * for responses containing multiple records.
+ * Type describing phase names used in server lifecycle flow.
  *
- * @category Data
+ * @category Lifecycle
  */
-export interface Records<T> {
-	records: T[];
-	recordCount: number;
-}
+export type LifecycleServerPhase =
+	| 'didBecomeReady'
+	| 'didInit'
+	| 'didLoad'
+	| 'didStop'
+	| 'didStart'
+	| 'willBecomeReady'
+	| 'willInit'
+	| 'willLoad'
+	| 'willShutdown'
+	| 'willStart'
+	| 'willStop';
