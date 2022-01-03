@@ -24,6 +24,6 @@
  */
 
 /**
- * @category Object APIs
+ * @category Object API
  */
 export type Depromisify<T> = T extends Promise<infer U> ? U : T;

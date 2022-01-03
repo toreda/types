@@ -26,7 +26,7 @@
 import {Primitive} from '../primitive';
 
 /**
- * @category Object APIs
+ * @category Object API
  */
 export type DeepExpand<T> = T extends Primitive
 	? T

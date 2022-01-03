@@ -24,8 +24,8 @@
  */
 
 /**
- * Type of a single object of type T or array of type T objects.
+ * Array callback type signature used by forEach.
  *
- * @category Object API
+ * @category Collections
  */
-export type Arrayable<T> = T | T[];
+export type ArrayFunc<T, U> = (element: T, ndx: number, arr: T[]) => U;

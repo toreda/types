@@ -27,7 +27,7 @@ import {Expand} from '../expand';
 import {Primitive} from '../primitive';
 
 /**
- * @category Object APIs
+ * @category Object API
  */
 export type DeepRequired<T> = Expand<{
 	[key in keyof T]-?: T[key] extends Primitive ? NonNullable<T[key]> : DeepRequired<T[key]>;

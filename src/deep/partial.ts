@@ -31,7 +31,7 @@ import {Primitive} from '../primitive';
  * marks top-level type `T` properties optional, but does not recursively mark
  * children of `T` or children of children, and so on.
  *
- * @category Object APIs
+ * @category Object API
  */
 export type DeepPartial<T> = Expand<{
 	[key in keyof T]?: T[key] extends Primitive ? T[key] : DeepPartial<T[key]>;

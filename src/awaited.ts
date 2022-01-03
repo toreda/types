@@ -24,6 +24,6 @@
  */
 
 /**
- * @category Signatures
+ * @category Object API
  */
 export type Awaited<T = unknown> = T extends PromiseLike<infer U> ? U : T;

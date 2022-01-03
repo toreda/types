@@ -23,9 +23,11 @@
  *
  */
 
+import type {ItorItem} from './itor/item';
+
 /**
- * Type of a single object of type T or array of type T objects.
- *
- * @category Object API
+ * @category Collections
  */
-export type Arrayable<T> = T | T[];
+export interface Itor<T> {
+	next: () => ItorItem<T>;
+}

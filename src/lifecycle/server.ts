@@ -27,6 +27,8 @@ import type {LifecycleServerPhase} from './server/phase';
 import {lifecycleServerPhases} from './server/phases';
 
 /**
+ * Managed flags for lifecycle phases used by server-side lifecycle flows.
+ *
  * @category Lifecycle
  */
 export class LifecycleServer {
@@ -92,7 +94,7 @@ export class LifecycleServer {
 		return {
 			didBecomeReady: this.didBecomeReady,
 			didInit: this.didInit,
-			didLoad: this.didBecomeReady,
+			didLoad: this.didLoad,
 			didStart: this.didStart,
 			didStop: this.didStop,
 			willBecomeReady: this.willBecomeReady,

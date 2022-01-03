@@ -24,8 +24,17 @@
  */
 
 /**
- * Type of a single object of type T or array of type T objects.
+ * JavaScript Iterator returned during iteration. Selects one target
+ * Collection item at a time.
  *
- * @category Object API
+ * @category Collections
  */
-export type Arrayable<T> = T | T[];
+export interface ItorItem<T> {
+	/** Collection Item found at current iteration index. */
+	value: T;
+	/** Identifies final iteration item.
+		false	-	Current Item is not the last Item. Continue Iterating.
+		true	-	Current Item is the last item. Stop Iterating.
+	*/
+	done: boolean;
+}

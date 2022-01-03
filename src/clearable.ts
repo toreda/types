@@ -24,8 +24,10 @@
  */
 
 /**
- * Type of a single object of type T or array of type T objects.
+ * Implementer offers a `clear` method to clear elements.
  *
  * @category Object API
  */
-export type Arrayable<T> = T | T[];
+export interface Clearable {
+	clear: () => boolean;
+}

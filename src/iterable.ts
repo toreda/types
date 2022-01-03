@@ -23,9 +23,16 @@
  *
  */
 
+import type {ArrayFunc} from './array/func';
+
 /**
- * Type of a single object of type T or array of type T objects.
+ * Implementer supports standard JavaScript iteration with `for of`
+ * and z.forEach`.
  *
- * @category Object API
+ * @category Collections
  */
-export type Arrayable<T> = T | T[];
+export interface Iterable<T, U> {
+	forEach: ArrayFunc<T, U>;
+	/** Support `for of` iteration */
+	[Symbol.iterator]: () => unknown;
+}

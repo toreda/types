@@ -24,8 +24,6 @@
  */
 
 /**
- * Type of a single object of type T or array of type T objects.
- *
  * @category Object API
  */
-export type Arrayable<T> = T | T[];
+export type Visitor<NodeT> = (node: NodeT) => Promise<void>;
