@@ -27,7 +27,7 @@
  * Stringable objects support stringifying its contents and includes a toString
  *  method to do so. Used in conjunction with other types.
  *
- * @category Object APIs
+ * @category Object API
  */
 export interface Stringable {
 	toString: () => string;

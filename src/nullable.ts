@@ -24,6 +24,6 @@
  */
 
 /**
- * @category Object APIs
+ * @category Object API
  */
 export type Nullable<T = unknown> = T | null;

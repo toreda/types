@@ -26,4 +26,4 @@
 /**
  * @category Object API
  */
-export type Visitor<NodeT> = (node: NodeT) => Promise<void>;
+export type Visitor<NodeT> = (node: NodeT) => Promise<NodeT | null>;

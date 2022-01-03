@@ -26,6 +26,6 @@
 /**
  * Type union with all TypeScript / JavaScript primitive types.
  *
- * @category Object APIs
+ * @category Object API
  */
 export type Primitive = bigint | boolean | null | number | string | symbol | undefined;
