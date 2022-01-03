@@ -1,16 +1,24 @@
 
 # [Unreleased]
 
-# [2.6.0] - 2021-12-08
+# [2.6.0] - 2022-01-02
+
 ## Added
 * `LifecycleServerDelegate` for server-side classes using lifecycles.
 * `LifecycleClientDelegate` for client-side classes using lifecycles.
 * `LifecyclePhaseId` as an expressive type to clarify the purpose of some name & id args used in lifecycle functions.
+* `Itor` for Iterators which contain a next call.
+* `ItorItem` for values returned by `Itor.next()`.
+* `Clearable` for objects offering `.clear()` functionality.
+* `Resettable` for objects offering state reset via `.reset()`.
+* `Visitor<NodeT>` for Visitor functions used in Graph and Tree search algorithms. Returns `Promise<NodeT | null>`, allowing the function to return the next node or indicate there are no more nodes.
+* `ArrayFunc<T, U>` used by `.forEach(...)` calls on Iterable objects.
 
 # [2.5.0] - 2021-11-18
 ## Added
 * `IdFn` type that defines expected id properties as a string, helper function, or `Strong` type.
 * `Cacheable` interface defining required properties for objects to be compatible with Toreda Cache classes.
+
 
 # [2.4.1] - 2021-11-08
 
@@ -45,6 +53,8 @@
 # [1.2.2]
 
 [Unreleased]: https://github.com/toreda/types/releases/compare/v1.2.2...HEAD
+[2.6.0]: https://github.com/toreda/types/releases/compare/v2.5.0...v2.6.0
+[2.5.0]: https://github.com/toreda/types/releases/compare/v2.4.0...v2.5.0
 [2.4.0]: https://github.com/toreda/types/releases/compare/v2.0.0...v2.4.0
 [2.0.0]: https://github.com/toreda/types/releases/compare/v1.2.2...v2.0.0
 [1.2.2]: https://github.com/toreda/types/releases/compare/v0.0.0...v1.2.2
