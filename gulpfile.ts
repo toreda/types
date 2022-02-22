@@ -47,15 +47,21 @@ async function linter() {
 function createDist() {
 	// Hack to create folder structures without actually reading files.
 	// Nested folders need to be created in their nested order.
+	// NOTE: In other projects this task is handled by `@toreda/build-tools`, however
+	// we cannot use it here because this package is a dependency of build-tools.
 	return gulp.src('*.*', {read: false}).pipe(gulp.dest('./dist'));
 }
 
 function cleanDist() {
+	// NOTE: In other projects this task is handled by `@toreda/build-tools`, however
+	// we cannot use it here because this package is a dependency of build-tools.
 	return del(`dist/**`, {force: true});
 }
 
 function buildSrc() {
 	// Build typescript sources and output them in './dist'.
+	// NOTE: In other projects this task is handled by `@toreda/build-tools`, however
+	// we cannot use it here because this package is a dependency of build-tools.
 	return src(srcPatterns).pipe(tsc()).pipe(dest('dist'));
 }
 

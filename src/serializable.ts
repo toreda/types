@@ -23,15 +23,16 @@
  *
  */
 
-import type {ArrayFunc} from './array/func';
-
 /**
- *  Declares support for object iteration using `for of` and `forEach`.
+ * Declares support for converting a managed class or managed data object
+ * to a simple object and serialized.
  *
  * @category Collections
  */
-export interface Iterable<T, U> {
-	forEach: ArrayFunc<T, U>;
-	/** Support `for of` iteration */
-	[Symbol.iterator]: () => unknown;
+export interface Serializable<DataT> {
+	/** Convert managed class to Toreda Data Object. Primitives and simple objects which
+	 * can be easily converted to strings for storage. */
+	toData: () => DataT;
+	/** Serialize current class properties and values for storage or transport. */
+	serialize: () => string | null;
 }

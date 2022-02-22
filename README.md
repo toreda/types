@@ -17,12 +17,21 @@ Improve readability, reduce redundancy. Functional &amp; Expressive Types used i
 # **Contents**
 - [`@toreda/types`](#toredatypes)
 - [**Contents**](#contents)
+- [Object API](#object-api)
+	- [`Resettable`](#resettable)
+		- [Example](#example)
+	- [`Clearable`](#clearable)
+		- [Example](#example-1)
+	- [`Stringable`](#stringable)
+		- [Example](#example-2)
+	- [`Iterable<T, U>`](#iterablet-u)
+		- [Example](#example-3)
 - [**Functional Types**](#functional-types)
 	- [`DeepRequired<T>`](#deeprequiredt)
 	- [`Primitive`](#primitive)
 		- [Import](#import)
 		- [Use](#use)
-	- [`Stringable`](#stringable)
+	- [`Stringable`](#stringable-1)
 		- [**Import**](#import-1)
 		- [**Use**](#use-1)
 - [**Expressive Types**](#expressive-types)
@@ -37,6 +46,107 @@ Improve readability, reduce redundancy. Functional &amp; Expressive Types used i
 	- [Copyright](#copyright)
 
 &nbsp;
+
+# Object API
+
+## `Resettable`
+Interface indicating implementer provides a `reset` method.
+
+### Example
+```typescript
+import type {Resettable} from '@toreda/types';
+
+class MyObj implements Resettable {
+	public reset(): void {
+		console.log('boop');
+	}
+}
+
+const o = new MyObj();
+o.reset();
+```
+
+## `Clearable`
+Interface indicating implementer provides a `clear()` method. Callers expect `true` to be returned when `clear` call is successful and `false` when it was not successful, or there was nothing to clear.
+
+### Example
+```typescript
+import type {Clearable} from '@toreda/types';
+
+class MyObj implements Clearable {
+	public clear(): boolean {
+		console.log('boop');
+
+		return true;
+	}
+}
+
+const o = new MyObj();
+const result = o.clear();
+```
+
+
+## `Stringable`
+Interface indicating implementer provides a `toString()` method which returns the object contents as a string. Typically used for serialization although usage may vary.
+
+### Example
+```typescript
+import type {Stringable} from '@toreda/types';
+
+class MyObj implements Stringable {
+	public a: string;
+	public b: string;
+
+	constructor() {
+		this.a = 'aaaa';
+		this.b = 'bbbb';
+	}
+
+	public toString(): string | null {
+		const o = {
+			a: this.a,
+			b: this.b
+		};
+
+		let result: string | null = null;
+		try {
+			result =  JSON.stringify(o);
+		} catch (e){
+			if (e instanceof Error) {
+				console.log(`toString exception: ${e.message}.`);
+			}
+		}
+
+		return result;
+	}
+}
+
+const o = new MyObj();
+const result = o.clear();
+```
+
+## `Iterable<T, U>`
+Support for object iteration with `forEach` and `for of`.
+
+### Example
+```typescript
+import type {Iterable} from '@toreda/types';
+
+class MyObj<T, U> implements Iterable<T, U> {
+	public a: string;
+	public b: string;
+	public items: T[];
+
+	constructor() {
+		this.a = 'aaaa';
+		this.b = 'bbbb';
+	}
+
+}
+
+const o = new MyObj();
+const result = o.clear();
+```
 
 # **Functional Types**
 
