@@ -2,7 +2,7 @@
 
 [![CI](https://img.shields.io/github/workflow/status/toreda/types/CI?style=for-the-badge)](https://github.com/toreda/types/actions) [![Coverage](https://img.shields.io/sonar/coverage/toreda_types?server=https%3A%2F%2Fsonarcloud.io&style=for-the-badge)](https://sonarcloud.io/project/activity?graph=coverage&id=toreda_types) [![Sonar Quality Gate](https://img.shields.io/sonar/quality_gate/toreda_types?server=https%3A%2F%2Fsonarcloud.io&style=for-the-badge)](https://sonarcloud.io/summary/new_code?id=toreda_types)
 
-[![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/toreda/types/master?style=for-the-badge)](https://github.com/toreda/types/releases/latest) [![GitHub Release Date](https://img.shields.io/github/release-date/toreda/types?style=for-the-badge)](https://github.com/toreda/types/releases) [![GitHub issues](https://img.shields.io/github/issues/toreda/types?style=for-the-badge)](https://github.com/toreda/types/issues)
+[![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/toreda/types/master?style=for-the-badge)](https://github.com/toreda/types/releases/latest) [![GitHub Release Date](https://img.shields.io/github/release-date/toreda/types?style=for-the-badge)](https://github.com/toreda/types/releases/latest) [![GitHub issues](https://img.shields.io/github/issues/toreda/types?style=for-the-badge)](https://github.com/toreda/types/issues)
 
  [![license](https://img.shields.io/github/license/toreda/types?style=for-the-badge)](https://github.com/toreda/types/blob/master/LICENSE)
 
@@ -24,8 +24,6 @@ Improve readability, reduce redundancy. Functional &amp; Expressive Types used i
 		- [Example](#example-1)
 	- [`Stringable`](#stringable)
 		- [Example](#example-2)
-	- [`Iterable<T, U>`](#iterablet-u)
-		- [Example](#example-3)
 - [**Functional Types**](#functional-types)
 	- [`DeepRequired<T>`](#deeprequiredt)
 	- [`Primitive`](#primitive)
@@ -125,28 +123,6 @@ const o = new MyObj();
 const result = o.clear();
 ```
 
-## `Iterable<T, U>`
-Support for object iteration with `forEach` and `for of`.
-
-### Example
-```typescript
-import type {Iterable} from '@toreda/types';
-
-class MyObj<T, U> implements Iterable<T, U> {
-	public a: string;
-	public b: string;
-	public items: T[];
-
-	constructor() {
-		this.a = 'aaaa';
-		this.b = 'bbbb';
-	}
-
-}
-
-const o = new MyObj();
-const result = o.clear();
-```
 
 # **Functional Types**
 
