@@ -42,6 +42,7 @@ Improve readability, reduce redundancy. Functional &amp; Expressive Types used i
 - [Legal](#legal)
 	- [License](#license)
 	- [Copyright](#copyright)
+	- [Website](#website)
 
 &nbsp;
 
@@ -239,4 +240,6 @@ $ yarn add @toreda/types --D
 ## Copyright
 Copyright &copy; 2019 - 2022 Toreda, Inc. All Rights Reserved.
 
-https://www.toreda.com
+
+## Website
+Toreda's company website can be found at [toreda.com](https://www.toreda.com)

@@ -1,7 +1,7 @@
 /**
  *	MIT License
  *
- *	Copyright (c) 2019 - 2022 Toreda, Inc.
+ *	Copyright (c) 2022 Toreda, Inc.
  *
  *	Permission is hereby granted, free of charge, to any person obtaining a copy
  *	of this software and associated documentation files (the "Software"), to deal
@@ -30,8 +30,8 @@ import type {ArrayFunc} from './array/func';
  *
  * @category Collections
  */
-export interface Iterable<T, U> {
-	forEach: ArrayFunc<T, U>;
+export interface Iterable<ItemT, ReturnT, NextT> {
+	forEach: ArrayFunc<ItemT, ReturnT>;
 	/** Support `for of` iteration */
-	[Symbol.iterator]: () => unknown;
+	[Symbol.iterator]: () => Iterator<ItemT, ReturnT, NextT>;
 }

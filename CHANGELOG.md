@@ -1,6 +1,166 @@
 
 # [Unreleased]
 
+# [2.8.0] - 2022-02-22
+
+## New Types
+
+### Cryptocurrency Units
+* `AAVE`
+* `ADA`
+* `ALGO`
+* `APE`
+* `ATOM`
+* `AVAX`
+* `AXS`
+* `BCH`
+* `BCN`
+* `BNB`
+* `BTC`
+* `BTM`
+* `BTM`
+* `BTT`
+* `BTT`
+* `BUSD`
+* `CAKE`
+* `CDAI`
+* `CEL`
+* `CELO`
+* `Coins`
+* `CUSDC`
+* `DAI`
+* `DASH`
+* `DGB`
+* `DOGE`
+* `DOT`
+* `ENJ`
+* `EOS`
+* `ETH`
+* `FIL`
+* `FLO`
+* `FLOW`
+* `FTM`
+* `FTX`
+* `FTX`
+* `GALA`
+* `GRT`
+* `Hashrate`
+* `HBAR`
+* `KCS`
+* `KSM`
+* `LINK`
+* `LRC`
+* `LTC`
+* `LUNA`
+* `MANA`
+* `MATIC`
+* `MKR`
+* `NEAR`
+* `NEXO`
+* `RVN`
+* `SAND`
+* `SHIB`
+* `SOL`
+* `STX`
+* `SYS`
+* `Tokens`
+* `TRX`
+* `TUSD`
+* `UNI`
+* `USDC`
+* `USDT`
+* `VET`
+* `VTC`
+* `WAVES`
+* `WBTC`
+* `WETH`
+* `ZEC`
+* `XLM`
+* `XMR`
+* `XRD`
+* `XRP`
+* `XTZ`
+* `XVG`
+* `ZEN`
+* `ZIL`
+* `ICP`
+
+### Scientific Units
+* `Amperes`
+* `Degrees`
+* `Katals`
+* `Farads`
+* `Hertz`
+* `Joules`
+* `Kelvin`
+* `Kilograms`
+* `Mole`
+* `Newtons`
+* `Ohms`
+* `Radians`
+* `Sieverts`
+* `Telsas`
+
+### Data Units
+* `Bits`
+* `Bytes`
+* `Kilobytes`
+* `Kilobits`
+* `Megabytes`
+* `Gigabytes`
+* `Petabytes`
+* `Megabits`
+* `Gigabits`
+* `Exabytes`
+* `Terabytes`
+* `Terabits`
+
+### Data-rate Units
+* `bps`
+* `Bps`
+* `Mbps`
+* `MBps`
+* `Gbps`
+* `GBps`
+* `Tbps`
+* `TBps`
+* `Pbps`
+* `PBps`
+
+### Size and Distance
+#### Imperial
+* `Feet`
+* `FluidOunces`
+* `Gallons`
+* `Grams`
+* `Inches`
+* `Miles`
+* `Ounces`
+* `Pounds`
+* `Yards`
+
+#### Metric
+* `Centimeters`
+* `Decimeters`
+* `Femtometers`
+* `Gigameters`
+* `Kilometers`
+* `Megameters`
+* `Meters`
+* `Micrometers`
+* `Micrometers`
+* `Millimeters`
+* `Nanometers`
+* `Picometers`
+* `Terameters`
+
+## New Types
+* `HashStr` to express hash string values.
+* `HashAlg` to express unique identifiers for hashing algorithms, e.g. `sha256`. Does not comfort to a specific format e.g. `sha256` vs `sha-256`, only that the stored value uniquely identifies a hashing algorithm.
+* `FileSize` to express file sizes in bytes or other units.
+* `PublicKey` to identify properties containing public key data, but does not describe algorithm, length, or other specific properties about the key.
+* `PrivateKey` to identify properties containing private key data, but does not describe algorithm, length, or other specific properties about the key.
+
 # [2.7.0] - 2022-02-21
 
 ## Added
@@ -73,7 +233,8 @@
 * No changelog for release.
 
 
-[Unreleased]: https://github.com/toreda/types/releases/compare/v1.2.2...HEAD
+[Unreleased]: https://github.com/toreda/types/releases/compare/v2.8.0...HEAD
+[2.7.0]: https://github.com/toreda/types/releases/compare/v2.7.0...v2.8.0
 [2.7.0]: https://github.com/toreda/types/releases/compare/v2.6.0...v2.7.0
 [2.6.0]: https://github.com/toreda/types/releases/compare/v2.5.0...v2.6.0
 [2.5.0]: https://github.com/toreda/types/releases/compare/v2.4.0...v2.5.0
