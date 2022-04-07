@@ -4,4 +4,4 @@
  *
  * @category Runnable
  */
-export type RunnableTask<ArgT, ReturnT> = (...args: ArgT[]) => Promise<ReturnT>;
+export type RunnableTask<ArgDataT, ReturnT> = (data: ArgDataT) => Promise<ReturnT>;

@@ -5,4 +5,4 @@
  *
  * @category Runnable
  */
-export type RunnableTaskSync<ArgT, ReturnT> = (...args: ArgT[]) => ReturnT;
+export type RunnableTaskSync<ArgDataT, ReturnT> = (data: ArgDataT) => ReturnT;
