@@ -1,6 +1,13 @@
 
 # [Unreleased]
 
+# [2.9.0] - 2022-04-06
+
+## New Types
+* `Runnable<ArgT, ReturnT>` interface for classes which implement a runnable task interface.
+* `RunnableTask<ArgT, ReturnT>` type signature for asynchronous functions invoked by `Runnable` classes.
+* `RunnableTaskSync<ArgT, ReturnT>` type signature for synchronous functions invoked by `Runnable` classes. Prefer async tasks whenever possible.
+
 # [2.8.0] - 2022-02-22
 
 ## New Types

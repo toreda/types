@@ -29,9 +29,9 @@
  *
  * @category Collections
  */
-export interface ItorItem<T> {
+export interface ItorItem<ItemT> {
 	/** Collection Item found at current iteration index. */
-	value: T;
+	value: ItemT;
 	/** Identifies final iteration item.
 		false	-	Current Item is not the last Item. Continue Iterating.
 		true	-	Current Item is the last item. Stop Iterating.
