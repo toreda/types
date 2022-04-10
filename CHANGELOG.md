@@ -1,7 +1,17 @@
 
 # [Unreleased]
 
-# [2.9.0] - 2022-04-06
+# [2.10.0] - 2022-04-09
+
+## Added
+* `BaseObject` interface
+
+## Fixes & Updated
+* Added `minimist` and `marked` packages to yarn resolutions to resolve CVEs flagged by Github.
+* Updated all dev dependencies to latest.
+* Performed `yarn upgrade`.
+
+# [2.9.1] - 2022-04-06
 
 ## New Types
 * `Runnable<ArgT, ReturnT>` interface for classes which implement a runnable task interface.
@@ -161,7 +171,6 @@
 * `Picometers`
 * `Terameters`
 
-## New Types
 * `HashStr` to express hash string values.
 * `HashAlg` to express unique identifiers for hashing algorithms, e.g. `sha256`. Does not comfort to a specific format e.g. `sha256` vs `sha-256`, only that the stored value uniquely identifies a hashing algorithm.
 * `FileSize` to express file sizes in bytes or other units.
