@@ -1,6 +1,11 @@
 
 # [Unreleased]
 
+# [2.10.1] - 2022-04-12
+## Fixed
+* `Iterable` incorrectly required `forEach: ArrayFunc<T, U>` which defines `forEach` as a single array function, when it should have defined `ArrayFunc` as the `fn` argument applied to each item in `forEach`.
+* `Iterable` previously required three arguments `ItemT`, `ReturnT`, and `NextT`. The third argument `NextT` now defaults to `undefined` and is considered optional.
+
 # [2.10.0] - 2022-04-09
 
 ## Added

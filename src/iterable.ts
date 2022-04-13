@@ -30,8 +30,8 @@ import type {ArrayFunc} from './array/func';
  *
  * @category Collections
  */
-export interface Iterable<ItemT, ReturnT, NextT> {
-	forEach: ArrayFunc<ItemT, ReturnT>;
+export interface Iterable<ItemT, ReturnT, NextT = undefined> {
+	forEach: (fn: ArrayFunc<ItemT, ReturnT>) => ReturnT;
 	/** Support `for of` iteration */
 	[Symbol.iterator]: () => Iterator<ItemT, ReturnT, NextT>;
 }
