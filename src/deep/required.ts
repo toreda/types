@@ -23,8 +23,8 @@
  *
  */
 
-import {Expand} from '../expand';
-import {Primitive} from '../primitive';
+import type {Expand} from '../expand';
+import type {Primitive} from '../primitive';
 
 /**
  * @category Object API

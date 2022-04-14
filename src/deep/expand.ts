@@ -23,7 +23,7 @@
  *
  */
 
-import {Primitive} from '../primitive';
+import type {Primitive} from '../primitive';
 
 /**
  * @category Object API

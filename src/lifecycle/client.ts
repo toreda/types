@@ -23,8 +23,7 @@
  *
  */
 
-import type {Data} from '../data';
-import {LifecycleClientData} from './client/data';
+import type {LifecycleClientData} from './client/data';
 
 /**
  * Manages client lifecycle flow for owner. Tracks which phases have executed to prevent

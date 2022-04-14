@@ -22,8 +22,8 @@
  * 	SOFTWARE.
  *
  */
-import {ANY} from '../../any';
-import {TypeMap} from '../../type/map';
+import type {ANY} from '../../any';
+import type {TypeMap} from '../../type/map';
 
 /**
  * Type signature for primitives or objects with unique constructors used

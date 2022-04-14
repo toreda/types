@@ -23,7 +23,7 @@
  *
  */
 
-import {ANY} from './any';
+import type {ANY} from './any';
 
 /**
  * Type signature for objects with a unique class constructor. Used in runtime
