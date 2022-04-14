@@ -1,5 +1,16 @@
 
 # [Unreleased]
+# [2.11.0] - 2022-04-14
+## Dependencies
+* Updated all dependencies to latest stable version available.
+* Added yarn resolution for `chokidar` to use version `^3.0.0`.
+
+## Fixed
+* Added missing `type` qualifier to type only & interface only imports.
+
+## Lifecycle Types
+* Added `LifecycleClientData` interface returned by the `LifecycleClient` `toData()` call. This replaces a previously generic phase name -> boolean mapping..
+* Added `LifecycleServerData` interface returned by the `LifecycleServer` `toData()` call. This replaces a previously generic phase name -> boolean mapping.
 
 # [2.10.1] - 2022-04-12
 ## Fixed
