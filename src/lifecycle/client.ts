@@ -24,6 +24,7 @@
  */
 
 import type {Data} from '../data';
+import {LifecycleClientData} from './client/data';
 
 /**
  * Manages client lifecycle flow for owner. Tracks which phases have executed to prevent
@@ -46,6 +47,7 @@ export class LifecycleClient {
 	public onLoad: boolean;
 	public onReady: boolean;
 	public onStart: boolean;
+	public didPause: boolean;
 	public willBecomeReady: boolean;
 	public willGainFocus: boolean;
 	public willLoseFocus: boolean;
@@ -65,6 +67,7 @@ export class LifecycleClient {
 		this.onInit = false;
 		this.onLoad = false;
 		this.onReady = false;
+		this.didPause = false;
 		this.onStart = false;
 		this.willBecomeReady = false;
 		this.willGainFocus = false;
@@ -101,15 +104,17 @@ export class LifecycleClient {
 		this.willPause = false;
 		this.willStart = false;
 		this.willStop = false;
+		this.didPause = false;
 	}
 
-	public toData(): Data {
+	public toData(): LifecycleClientData {
 		return {
 			didBecomeReady: this.didBecomeReady,
 			didGainFocus: this.didGainFocus,
 			didInit: this.didInit,
 			didLoad: this.didLoad,
 			didLoseFocus: this.didLoseFocus,
+			didPause: this.didPause,
 			didStart: this.didStart,
 			didUnpause: this.didUnpause,
 			memoryWarning: this.memoryWarning,

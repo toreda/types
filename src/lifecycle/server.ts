@@ -23,6 +23,7 @@
  *
  */
 
+import type {LifecycleServerData} from './server/data';
 import type {LifecycleServerPhase} from './server/phase';
 import {lifecycleServerPhases} from './server/phases';
 
@@ -90,7 +91,7 @@ export class LifecycleServer {
 		this.willStop = false;
 	}
 
-	public toData(): Record<LifecycleServerPhase, boolean> {
+	public toData(): LifecycleServerData {
 		return {
 			didBecomeReady: this.didBecomeReady,
 			didInit: this.didInit,
