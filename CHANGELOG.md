@@ -1,5 +1,14 @@
 
 # [Unreleased]
+
+# [2.12.0] - 2022-05-08
+
+## Added
+* New types for various crypto coins & tokens.
+
+## Changed
+* Most previous ticket symbol types split into two distinct types e.g. EthAddr & EthTokenAmt (example).
+
 # [2.11.0] - 2022-04-14
 ## Dependencies
 * Updated all dependencies to latest stable version available.
