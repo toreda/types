@@ -24,30 +24,27 @@
  */
 
 /**
- * Required for data objects storing Lifecycle Client
+ * Expressive type describing phase names used in client lifecycle flow.
  *
  * @category Lifecycle
  */
-export interface LifecycleClientData {
-	didBecomeReady: boolean;
-	didGainFocus: boolean;
-	willInit: boolean;
-	didInit: boolean;
-	willLoad: boolean;
-	didLoad: boolean;
-	didLoseFocus: boolean;
-	didStart: boolean;
-	didUnpause: boolean;
-	memoryWarning: boolean;
-	onInit: boolean;
-	onLoad: boolean;
-	onReady: boolean;
-	onStart: boolean;
-	didPause: boolean;
-	willBecomeReady: boolean;
-	willGainFocus: boolean;
-	willLoseFocus: boolean;
-	willPause: boolean;
-	willStart: boolean;
-	willStop: boolean;
-}
+export type LifecycleNetworkCnxPhase =
+	| 'cnxWillStartConnect'
+	| 'cnxDidStartConnect'
+	| 'cnxWillStopConnect'
+	| 'cnxDidStopConnect'
+	| 'cnxDidFailConnect'
+	| 'cnxDidConnect'
+	/** New Server connection will open. */
+	| 'cnxWillOpen'
+	/** New Server connection has opened. */
+	| 'cnxDidOpen'
+	/** Current Server Connection close */
+	| 'cnxWillClose'
+	/**  */
+	| 'cnxDidClose'
+	| 'cnxWillConnect'
+	| 'cnxWillDisconnect'
+	| 'cnxDidDisconnect'
+	| 'cnxOnPing'
+	| 'cnxOnPong';

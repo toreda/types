@@ -1,7 +1,7 @@
 /**
  *	MIT License
  *
- *	Copyright (c) 2019 - 2022 Toreda, Inc.
+ *	Copyright (c) 2022 Toreda, Inc.
  *
  *	Permission is hereby granted, free of charge, to any person obtaining a copy
  *	of this software and associated documentation files (the "Software"), to deal
@@ -24,30 +24,8 @@
  */
 
 /**
- * Required for data objects storing Lifecycle Client
+ * Expressive Alias for expressing Token Symbols.
  *
- * @category Lifecycle
+ * @category Expressive Types - Cryptocurrencies
  */
-export interface LifecycleClientData {
-	didBecomeReady: boolean;
-	didGainFocus: boolean;
-	willInit: boolean;
-	didInit: boolean;
-	willLoad: boolean;
-	didLoad: boolean;
-	didLoseFocus: boolean;
-	didStart: boolean;
-	didUnpause: boolean;
-	memoryWarning: boolean;
-	onInit: boolean;
-	onLoad: boolean;
-	onReady: boolean;
-	onStart: boolean;
-	didPause: boolean;
-	willBecomeReady: boolean;
-	willGainFocus: boolean;
-	willLoseFocus: boolean;
-	willPause: boolean;
-	willStart: boolean;
-	willStop: boolean;
-}
+export type TokenSymbol = string;

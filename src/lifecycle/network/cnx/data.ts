@@ -24,30 +24,20 @@
  */
 
 /**
- * Required for data objects storing Lifecycle Client
+ * Required properties for clients using the Network Client Lifecycle.
  *
  * @category Lifecycle
  */
-export interface LifecycleClientData {
-	didBecomeReady: boolean;
-	didGainFocus: boolean;
-	willInit: boolean;
-	didInit: boolean;
-	willLoad: boolean;
-	didLoad: boolean;
-	didLoseFocus: boolean;
-	didStart: boolean;
-	didUnpause: boolean;
-	memoryWarning: boolean;
-	onInit: boolean;
-	onLoad: boolean;
-	onReady: boolean;
-	onStart: boolean;
-	didPause: boolean;
-	willBecomeReady: boolean;
-	willGainFocus: boolean;
-	willLoseFocus: boolean;
-	willPause: boolean;
-	willStart: boolean;
-	willStop: boolean;
+export interface LifecycleNetworkCnxData {
+	cnxDidStartConnect: boolean;
+	cnxWillStartConnect: boolean;
+	cnxWillStopConnect: boolean;
+	cnxDidStopConnect: boolean;
+	cnxDidFailConnect: boolean;
+	cnxWillHandshake: boolean;
+	cnxDidHandshake: boolean;
+	cnxDidFailHandshake: boolean;
+	cnxWillOpen: boolean;
+	cnxDidOpen: boolean;
+	cnxDidConnect: boolean;
 }

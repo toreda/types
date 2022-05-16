@@ -1,6 +1,6 @@
 {
 	"name": "@toreda/types",
-	"version": "2.12.0",
+	"version": "2.13.1",
 	"public": true,
 	"description": "Common mappings, aliases, and types used in Toreda TypeScript packages.",
 	"main": "./dist/index.js",
@@ -10,7 +10,7 @@
 		"lint:nofix": "yarn lint",
 		"lint:fix": "yarn eslint src/**/*.{js,ts,tsx} --quiet --fix",
 		"build": "yarn gulp",
-		"make:docs": "yarn typedoc docs --categorizeByGroup false --entryPoints ./src/index.ts",
+		"make:docs": "yarn typedoc",
 		"make:depgraph": "yarn madge src/index.ts --image dependency-graph.png",
 		"test": "yarn jest --coverage --maxWorkers=50%"
 	},

@@ -31,6 +31,7 @@ import type {LifecycleListener} from '../listener';
  */
 export interface LifecycleClientDelegate {
 	lifecycle: LifecycleClient;
+
 	/** Entered 'init' phase - creating all necessary instances. **/
 	willInit?: LifecycleListener;
 	onInit: LifecycleListener;
