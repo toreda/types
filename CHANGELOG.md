@@ -1,5 +1,13 @@
 # [Unreleased]
 
+# [2.14.0] - 2022-05-20
+
+## Added
+* `LangCode` identifying localization language used in other localization systems.
+* Entity Lifecycle types: `LifecycleEntity`, `LifecycleEntityData`, `LifecycleEntityDelegate`, and `LifecycleEntityPhase`.
+* Addon Lifecycle types: `LifecycleAddon`, `LifecycleAddonData`, `LifecycleAddonDelegate`, and `LifecycleAddonPhase`.
+* `cnxWillReconnect`, `cnxDidReconnect`, `cnxWillInit`, `cnxDidInit`, `cnxWillLoad`, and `cnxDidLoad` added connection lifecycle flow.
+
 # [2.13.1] - 2022-05-15
 
 ## Fixed

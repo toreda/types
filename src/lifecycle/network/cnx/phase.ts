@@ -29,22 +29,24 @@
  * @category Lifecycle
  */
 export type LifecycleNetworkCnxPhase =
-	| 'cnxWillStartConnect'
-	| 'cnxDidStartConnect'
-	| 'cnxWillStopConnect'
-	| 'cnxDidStopConnect'
-	| 'cnxDidFailConnect'
-	| 'cnxDidConnect'
-	/** New Server connection will open. */
-	| 'cnxWillOpen'
-	/** New Server connection has opened. */
-	| 'cnxDidOpen'
-	/** Current Server Connection close */
-	| 'cnxWillClose'
-	/**  */
 	| 'cnxDidClose'
+	| 'cnxDidConnect'
+	| 'cnxDidDisconnect'
+	| 'cnxDidFailConnect'
+	| 'cnxDidInit'
+	| 'cnxDidLoad'
+	| 'cnxDidOpen'
+	| 'cnxDidReconnect'
+	| 'cnxDidStartConnect'
+	| 'cnxDidStopConnect'
+	| 'cnxOnPing'
+	| 'cnxOnPong'
+	| 'cnxWillClose'
 	| 'cnxWillConnect'
 	| 'cnxWillDisconnect'
-	| 'cnxDidDisconnect'
-	| 'cnxOnPing'
-	| 'cnxOnPong';
+	| 'cnxWillInit'
+	| 'cnxWillLoad'
+	| 'cnxWillOpen'
+	| 'cnxWillReconnect'
+	| 'cnxWillStartConnect'
+	| 'cnxWillStopConnect';

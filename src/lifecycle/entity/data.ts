@@ -23,36 +23,51 @@
  *
  */
 
-import type {LifecycleListener} from '../../../lifecycle/listener';
-import type {LifecycleNetworkCnx} from '../cnx';
-
 /**
- * Delegate interface for classes implementing Network Client listeners.
+ * Data format for entity lifecycle flags.
  *
- * @category Lifecycle
+ * @category Lifecycle - Entities
  */
-export interface LifecycleNetworkCnxDelegate {
-	lifecycle: LifecycleNetworkCnx;
-	cnxDidClose?: LifecycleListener;
-	cnxDidConnect?: LifecycleListener;
-	cnxDidFailConnect?: LifecycleListener;
-	cnxDidFailHandshake?: LifecycleListener;
-	cnxDidHandshake?: LifecycleListener;
-	cnxDidInit?: LifecycleListener;
-	cnxDidLoad?: LifecycleListener;
-	cnxDidOpen?: LifecycleListener;
-	cnxDidRcvMsg?: LifecycleListener;
-	cnxDidReconnect?: LifecycleListener;
-	cnxDidSndMsg?: LifecycleListener;
-	cnxDidStartConnect?: LifecycleListener;
-	cnxDidStopConnect?: LifecycleListener;
-	cnxOnPing?: LifecycleListener;
-	cnxOnPong?: LifecycleListener;
-	cnxWillHandshake?: LifecycleListener;
-	cnxWillInit?: LifecycleListener;
-	cnxWillLoad?: LifecycleListener;
-	cnxWillOpen?: LifecycleListener;
-	cnxWillReconnect?: LifecycleListener;
-	cnxWillStartConnect?: LifecycleListener;
-	cnxWillStopConnect?: LifecycleListener;
+export interface LifecycleEntityData {
+	entityWillInit: boolean;
+	entityDidInit: boolean;
+
+	sceneWillLoad: boolean;
+	sceneDidLoad: boolean;
+
+	entityWillLoad: boolean;
+	entityDidLoad: boolean;
+
+	entityWillSpawn: boolean;
+	entityDidSpawn: boolean;
+
+	entityWillAppear: boolean;
+	entityDidAppear: boolean;
+
+	sceneWillStart: boolean;
+	sceneDidStart: boolean;
+
+	entityWillStart: boolean;
+	entityDidStart: boolean;
+
+	sceneWillPause: boolean;
+
+	entityWillPause: boolean;
+
+	sceneDidUnpause: boolean;
+
+	entityDidUnpause: boolean;
+
+	entityWillHide: boolean;
+	entityDidHide: boolean;
+
+	entityWillDespawn: boolean;
+	entityDidDespawn: boolean;
+
+	sceneWillStop: boolean;
+
+	entityWillStop: boolean;
+	entityDidStop: boolean;
+
+	memoryWarning: boolean;
 }

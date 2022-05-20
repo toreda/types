@@ -29,15 +29,22 @@
  * @category Lifecycle
  */
 export interface LifecycleNetworkCnxData {
+	cnxDidClose: boolean;
+	cnxDidConnect: boolean;
+	cnxDidFailConnect: boolean;
+	cnxDidFailHandshake: boolean;
+	cnxDidHandshake: boolean;
+	cnxDidInit: boolean;
+	cnxDidLoad: boolean;
+	cnxDidOpen: boolean;
+	cnxDidReconnect: boolean;
 	cnxDidStartConnect: boolean;
+	cnxDidStopConnect: boolean;
+	cnxWillHandshake: boolean;
+	cnxWillInit: boolean;
+	cnxWillLoad: boolean;
+	cnxWillOpen: boolean;
+	cnxWillReconnect: boolean;
 	cnxWillStartConnect: boolean;
 	cnxWillStopConnect: boolean;
-	cnxDidStopConnect: boolean;
-	cnxDidFailConnect: boolean;
-	cnxWillHandshake: boolean;
-	cnxDidHandshake: boolean;
-	cnxDidFailHandshake: boolean;
-	cnxWillOpen: boolean;
-	cnxDidOpen: boolean;
-	cnxDidConnect: boolean;
 }

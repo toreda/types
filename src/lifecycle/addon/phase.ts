@@ -23,36 +23,27 @@
  *
  */
 
-import type {LifecycleListener} from '../../../lifecycle/listener';
-import type {LifecycleNetworkCnx} from '../cnx';
-
 /**
- * Delegate interface for classes implementing Network Client listeners.
+ * Expressive type describing phase names used in client lifecycle flow.
  *
- * @category Lifecycle
+ * @category Lifecycle - Addons
  */
-export interface LifecycleNetworkCnxDelegate {
-	lifecycle: LifecycleNetworkCnx;
-	cnxDidClose?: LifecycleListener;
-	cnxDidConnect?: LifecycleListener;
-	cnxDidFailConnect?: LifecycleListener;
-	cnxDidFailHandshake?: LifecycleListener;
-	cnxDidHandshake?: LifecycleListener;
-	cnxDidInit?: LifecycleListener;
-	cnxDidLoad?: LifecycleListener;
-	cnxDidOpen?: LifecycleListener;
-	cnxDidRcvMsg?: LifecycleListener;
-	cnxDidReconnect?: LifecycleListener;
-	cnxDidSndMsg?: LifecycleListener;
-	cnxDidStartConnect?: LifecycleListener;
-	cnxDidStopConnect?: LifecycleListener;
-	cnxOnPing?: LifecycleListener;
-	cnxOnPong?: LifecycleListener;
-	cnxWillHandshake?: LifecycleListener;
-	cnxWillInit?: LifecycleListener;
-	cnxWillLoad?: LifecycleListener;
-	cnxWillOpen?: LifecycleListener;
-	cnxWillReconnect?: LifecycleListener;
-	cnxWillStartConnect?: LifecycleListener;
-	cnxWillStopConnect?: LifecycleListener;
-}
+export type LifecycleAddonPhase =
+	| 'willInit'
+	| 'didInit'
+	| 'willLoad'
+	| 'didLoad'
+	| 'willStart'
+	| 'didStart'
+	| 'willBecomeReady'
+	| 'didBecomeReady'
+	| 'memoryWarning'
+	| 'willPause'
+	| 'didUnpause'
+	| 'willStop'
+	| 'didStop'
+	| 'willShutdown'
+	| 'willLoseFocus'
+	| 'didLoseFocus'
+	| 'willGainFocus'
+	| 'didGainFocus';

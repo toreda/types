@@ -1,5 +1,5 @@
 /**
- * @category Lifecycle
+ * @category Lifecycle - Network Connections
  */
 export class LifecycleNetworkCnx {
 	public cnxDidStartConnect: boolean;
@@ -13,6 +13,12 @@ export class LifecycleNetworkCnx {
 	public cnxWillOpen: boolean;
 	public cnxDidOpen: boolean;
 	public cnxDidConnect: boolean;
+	public cnxWillReconnect: boolean;
+	public cnxDidReconnect: boolean;
+	public cnxWillInit: boolean;
+	public cnxDidInit: boolean;
+	public cnxWillLoad: boolean;
+	public cnxDidLoad: boolean;
 
 	constructor() {
 		this.cnxDidStartConnect = false;
@@ -26,6 +32,12 @@ export class LifecycleNetworkCnx {
 		this.cnxWillOpen = false;
 		this.cnxDidOpen = false;
 		this.cnxDidConnect = false;
+		this.cnxWillReconnect = false;
+		this.cnxDidReconnect = false;
+		this.cnxWillInit = false;
+		this.cnxDidInit = false;
+		this.cnxWillLoad = false;
+		this.cnxDidLoad = false;
 	}
 
 	public reset(): void {
@@ -40,5 +52,11 @@ export class LifecycleNetworkCnx {
 		this.cnxDidConnect = false;
 		this.cnxDidHandshake = false;
 		this.cnxDidFailHandshake = false;
+		this.cnxWillReconnect = false;
+		this.cnxDidReconnect = false;
+		this.cnxWillInit = false;
+		this.cnxDidInit = false;
+		this.cnxWillLoad = false;
+		this.cnxDidLoad = false;
 	}
 }

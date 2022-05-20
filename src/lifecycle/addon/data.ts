@@ -23,36 +23,27 @@
  *
  */
 
-import type {LifecycleListener} from '../../../lifecycle/listener';
-import type {LifecycleNetworkCnx} from '../cnx';
-
 /**
- * Delegate interface for classes implementing Network Client listeners.
+ *  Status flags indicating which handlers have already been called in an Addon Lifecycle.
  *
- * @category Lifecycle
+ * @category Lifecycle - Addons
  */
-export interface LifecycleNetworkCnxDelegate {
-	lifecycle: LifecycleNetworkCnx;
-	cnxDidClose?: LifecycleListener;
-	cnxDidConnect?: LifecycleListener;
-	cnxDidFailConnect?: LifecycleListener;
-	cnxDidFailHandshake?: LifecycleListener;
-	cnxDidHandshake?: LifecycleListener;
-	cnxDidInit?: LifecycleListener;
-	cnxDidLoad?: LifecycleListener;
-	cnxDidOpen?: LifecycleListener;
-	cnxDidRcvMsg?: LifecycleListener;
-	cnxDidReconnect?: LifecycleListener;
-	cnxDidSndMsg?: LifecycleListener;
-	cnxDidStartConnect?: LifecycleListener;
-	cnxDidStopConnect?: LifecycleListener;
-	cnxOnPing?: LifecycleListener;
-	cnxOnPong?: LifecycleListener;
-	cnxWillHandshake?: LifecycleListener;
-	cnxWillInit?: LifecycleListener;
-	cnxWillLoad?: LifecycleListener;
-	cnxWillOpen?: LifecycleListener;
-	cnxWillReconnect?: LifecycleListener;
-	cnxWillStartConnect?: LifecycleListener;
-	cnxWillStopConnect?: LifecycleListener;
+export interface LifecycleAddonData {
+	didBecomeReady: boolean;
+	didGainFocus: boolean;
+	didInit: boolean;
+	didLoad: boolean;
+	didLoseFocus: boolean;
+	didStart: boolean;
+	didStop: boolean;
+	didUnpause: boolean;
+	memoryWarning: boolean;
+	willBecomeReady: boolean;
+	willGainFocus: boolean;
+	willInit: boolean;
+	willLoad: boolean;
+	willLoseFocus: boolean;
+	willPause: boolean;
+	willStart: boolean;
+	willStop: boolean;
 }
