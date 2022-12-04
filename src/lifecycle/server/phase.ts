@@ -23,20 +23,11 @@
  *
  */
 
+import type {LifecycleServer} from '../server';
+
 /**
  * Type describing phase names used in server lifecycle flow.
  *
  * @category Lifecycle
  */
-export type LifecycleServerPhase =
-	| 'didBecomeReady'
-	| 'didInit'
-	| 'didLoad'
-	| 'didStop'
-	| 'didStart'
-	| 'willBecomeReady'
-	| 'willInit'
-	| 'willLoad'
-	| 'willShutdown'
-	| 'willStart'
-	| 'willStop';
+export type LifecycleServerPhase = keyof LifecycleServer;

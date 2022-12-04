@@ -28,4 +28,4 @@
  *
  * @category Lifecycle
  */
-export type LifecycleListener = () => Promise<boolean> | boolean;
+export type LifecycleListener<ArgsT = unknown> = (args?: ArgsT) => Promise<boolean> | boolean;

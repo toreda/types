@@ -23,44 +23,43 @@
  *
  */
 
-import type {LifecycleClient} from '../client';
+import type {LifecycleDelegateCommon} from '../delegate/common';
 import type {LifecycleListener} from '../listener';
 
 /**
  * @category Lifecycle
  */
-export interface LifecycleClientDelegate {
-	lifecycle: LifecycleClient;
-
+export interface LifecycleClientDelegate<ArgsT = unknown> {
 	/** Entered 'init' phase - creating all necessary instances. **/
-	willInit?: LifecycleListener;
-	onInit: LifecycleListener;
-	didInit?: LifecycleListener;
+	willInit?: LifecycleListener<ArgsT>;
+	onInit: LifecycleListener<ArgsT>;
+	didInit?: LifecycleListener<ArgsT>;
 	/** Client completed the 'load' phase' and will begin load phase next.*/
-	didLoad?: LifecycleListener;
+	didLoad?: LifecycleListener<ArgsT>;
 	/** Client is now loading resources, assets, and packages. */
-	onLoad: LifecycleListener;
-	willLoad?: LifecycleListener;
+	onLoad: LifecycleListener<ArgsT>;
+	willLoad?: LifecycleListener<ArgsT>;
 	/** Entered 'ready' phase - all systems are running & ready. */
-	willBecomeReady?: LifecycleListener;
-	onReady: LifecycleListener;
-	didBecomeReady?: LifecycleListener;
+	willBecomeReady?: LifecycleListener<ArgsT>;
+	onReady: LifecycleListener<ArgsT>;
+	didBecomeReady?: LifecycleListener<ArgsT>;
 	/** Client systems are starting and will enter 'start' phase. */
-	willStart?: LifecycleListener;
-	onStart: LifecycleListener;
-	didStart?: LifecycleListener;
+	willStart?: LifecycleListener<ArgsT>;
+	onStart: LifecycleListener<ArgsT>;
+	didStart?: LifecycleListener<ArgsT>;
 	/** Client received memory warning from OS and cleared cached resources. */
-	onMemoryWarning?: LifecycleListener;
+	memoryWarning?: LifecycleListener<ArgsT>;
 	/** Client will enter 'pause' phase soon. Prepare to pause. */
-	willPause?: LifecycleListener;
+	willPause?: LifecycleListener<ArgsT>;
+	didPause?: LifecycleListener<ArgsT>;
 	/** Client entered 'pause' phase. All systems should now be paused. */
-	didUnpause?: LifecycleListener;
+	didUnpause?: LifecycleListener<ArgsT>;
 	/** Client will enter 'stop' phase sometime soon. Prepare to stop systems. */
-	willStop?: LifecycleListener;
+	willStop?: LifecycleListener<ArgsT>;
 	/** Client entered 'stop' phase - client has stopped running. All systems & timers are now stopped. */
 
-	willLoseFocus?: LifecycleListener;
-	didLoseFocus?: LifecycleListener;
-	didGainFocus?: LifecycleListener;
-	willGainFocus?: LifecycleListener;
+	willLoseFocus?: LifecycleListener<ArgsT>;
+	didLoseFocus?: LifecycleListener<ArgsT>;
+	didGainFocus?: LifecycleListener<ArgsT>;
+	willGainFocus?: LifecycleListener<ArgsT>;
 }

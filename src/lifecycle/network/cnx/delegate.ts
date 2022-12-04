@@ -31,28 +31,38 @@ import type {LifecycleNetworkCnx} from '../cnx';
  *
  * @category Lifecycle
  */
-export interface LifecycleNetworkCnxDelegate {
+export interface LifecycleNetworkCnxDelegate<ArgT = unknown> {
 	lifecycle: LifecycleNetworkCnx;
-	cnxDidClose?: LifecycleListener;
-	cnxDidConnect?: LifecycleListener;
-	cnxDidFailConnect?: LifecycleListener;
-	cnxDidFailHandshake?: LifecycleListener;
-	cnxDidHandshake?: LifecycleListener;
-	cnxDidInit?: LifecycleListener;
-	cnxDidLoad?: LifecycleListener;
-	cnxDidOpen?: LifecycleListener;
-	cnxDidRcvMsg?: LifecycleListener;
-	cnxDidReconnect?: LifecycleListener;
-	cnxDidSndMsg?: LifecycleListener;
-	cnxDidStartConnect?: LifecycleListener;
-	cnxDidStopConnect?: LifecycleListener;
-	cnxOnPing?: LifecycleListener;
-	cnxOnPong?: LifecycleListener;
-	cnxWillHandshake?: LifecycleListener;
-	cnxWillInit?: LifecycleListener;
-	cnxWillLoad?: LifecycleListener;
-	cnxWillOpen?: LifecycleListener;
-	cnxWillReconnect?: LifecycleListener;
-	cnxWillStartConnect?: LifecycleListener;
-	cnxWillStopConnect?: LifecycleListener;
+	cnxDidClose?: LifecycleListener<ArgT>;
+	cnxDidConnect?: LifecycleListener<ArgT>;
+	cnxDidDisconnect?: LifecycleListener<ArgT>;
+	cnxDidFailClose?: LifecycleListener<ArgT>;
+	cnxDidFailConnect?: LifecycleListener<ArgT>;
+	cnxDidFailHandshake?: LifecycleListener<ArgT>;
+	cnxDidFailReconnect?: LifecycleListener<ArgT>;
+	cnxDidHandshake?: LifecycleListener<ArgT>;
+	cnxDidInit?: LifecycleListener<ArgT>;
+	cnxDidLoad?: LifecycleListener<ArgT>;
+	cnxDidOpen?: LifecycleListener<ArgT>;
+	cnxDidRcvMsg?: LifecycleListener<ArgT>;
+	cnxDidReconnect?: LifecycleListener<ArgT>;
+	cnxDidSndMsg?: LifecycleListener<ArgT>;
+	cnxDidStartConnect?: LifecycleListener<ArgT>;
+	cnxDidStopConnect?: LifecycleListener<ArgT>;
+	cnxDidStopReconnect?: LifecycleListener<ArgT>;
+	cnxOnPing?: LifecycleListener<ArgT>;
+	cnxOnPong?: LifecycleListener<ArgT>;
+	cnxWillClose?: LifecycleListener<ArgT>;
+	cnxWillDisconnect?: LifecycleListener<ArgT>;
+	cnxWillFailConnect?: LifecycleListener<ArgT>;
+	cnxWillFailReconnect?: LifecycleListener<ArgT>;
+	cnxWillHandshake?: LifecycleListener<ArgT>;
+	cnxWillInit?: LifecycleListener<ArgT>;
+	cnxWillLoad?: LifecycleListener<ArgT>;
+	cnxWillOpen?: LifecycleListener<ArgT>;
+	cnxWillReconnect?: LifecycleListener<ArgT>;
+	cnxWillStartConnect?: LifecycleListener<ArgT>;
+	cnxWillStartReconnect?: LifecycleListener<ArgT>;
+	cnxWillStopConnect?: LifecycleListener<ArgT>;
+	cnxWillStopReconnect?: LifecycleListener<ArgT>;
 }

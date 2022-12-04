@@ -23,7 +23,7 @@
  *
  */
 
-import type {LifecyclePhaseId} from '../id';
+import {lifecyclePhaseIds} from '../ids';
 
 /**
  * Get listener name for target Lifecycle Phase.
@@ -33,59 +33,6 @@ import type {LifecyclePhaseId} from '../id';
  *
  * @category Lifecycle
  */
-export function lifecyclePhaseListenerName(id: LifecyclePhaseId): string | null {
-	switch (id) {
-		case 'didInit':
-			return id;
-		case 'willInit':
-			return id;
-		case 'willLoad':
-			return id;
-		case 'didLoad':
-			return id;
-		case 'willStart':
-			return id;
-		case 'didStart':
-			return id;
-		case 'willBecomeReady':
-			return id;
-		case 'didBecomeReady':
-			return id;
-		case 'willPause':
-			return id;
-		case 'didUnpause':
-			return id;
-		case 'willStop':
-			return id;
-		case 'didStop':
-			return id;
-		case 'willConnect':
-			return id;
-		case 'didConnect':
-			return id;
-		case 'didDisconnect':
-			return id;
-		case 'willDisconnect':
-			return id;
-		case 'didFailConnect':
-			return id;
-		case 'memoryWarning':
-			return 'onMemoryWarning';
-		case 'willLoseFocus':
-			return id;
-		case 'willGainFocus':
-			return id;
-		case 'didGainFocus':
-			return id;
-		case 'didLoseFocus':
-			return id;
-		case 'willShutdown':
-			return id;
-		case 'willReconnect':
-			return id;
-		case 'didReconnect':
-			return id;
-		default:
-			return null;
-	}
+export function lifecyclePhaseListenerName(id: string): string | null {
+	return lifecyclePhaseIds.has(id) ? id : null;
 }

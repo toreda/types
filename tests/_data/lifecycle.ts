@@ -60,6 +60,7 @@ export class SampleClient implements LifecycleClientDelegate {
 	constructor() {
 		this.lifecycle = new LifecycleClient();
 	}
+
 	public async didBecomeReady(): Promise<boolean> {
 		return true;
 	}
@@ -141,33 +142,6 @@ export class SampleClient implements LifecycleClientDelegate {
 	}
 }
 
-export const PHASES = [
-	{name: 'didBecomeReady', listener: 'didBecomeReady'},
-	{name: 'didConnect', listener: 'didConnect'},
-	{name: 'didDisconnect', listener: 'didDisconnect'},
-	{name: 'didFailConnect', listener: 'didFailConnect'},
-	{name: 'didGainFocus', listener: 'didGainFocus'},
-	{name: 'didInit', listener: 'didInit'},
-	{name: 'didLoad', listener: 'didLoad'},
-	{name: 'didLoseFocus', listener: 'didLoseFocus'},
-	{name: 'didReconnect', listener: 'didReconnect'},
-	{name: 'didStart', listener: 'didStart'},
-	{name: 'didStop', listener: 'didStop'},
-	{name: 'didUnpause', listener: 'didUnpause'},
-	{name: 'memoryWarning', listener: 'onMemoryWarning'},
-	{name: 'willBecomeReady', listener: 'willBecomeReady'},
-	{name: 'willConnect', listener: 'willConnect'},
-	{name: 'willDisconnect', listener: 'willDisconnect'},
-	{name: 'willInit', listener: 'willInit'},
-	{name: 'willLoad', listener: 'willLoad'},
-	{name: 'willGainFocus', listener: 'willGainFocus'},
-	{name: 'willLoseFocus', listener: 'willLoseFocus'},
-	{name: 'willPause', listener: 'willPause'},
-	{name: 'willReconnect', listener: 'willReconnect'},
-	{name: 'willStart', listener: 'willStart'},
-	{name: 'willStop', listener: 'willStop'}
-];
-
 export const ADDON_PHASES = [];
 
 export const CLIENT_PHASES = [
@@ -179,7 +153,7 @@ export const CLIENT_PHASES = [
 	{name: 'didLoad', listener: 'didLoad'},
 	{name: 'didStart', listener: 'didStart'},
 	{name: 'didUnpause', listener: 'didUnpause'},
-	{name: 'memoryWarning', listener: 'onMemoryWarning'},
+	{name: 'memoryWarning', listener: 'memoryWarning'},
 	{name: 'willBecomeReady', listener: 'willBecomeReady'},
 	{name: 'willGainFocus', listener: 'willGainFocus'},
 	{name: 'willLoseFocus', listener: 'willLoseFocus'},
@@ -191,14 +165,17 @@ export const CLIENT_PHASES = [
 ];
 
 export const SERVER_PHASES = [
-	{name: 'willInit', listener: 'willInit'},
-	{name: 'didInit', listener: 'didInit'},
-	{name: 'willLoad', listener: 'willLoad'},
-	{name: 'didLoad', listener: 'didLoad'},
-	{name: 'willStart', listener: 'willStart'},
-	{name: 'didStart', listener: 'didStart'},
-	{name: 'willBecomeReady', listener: 'willBecomeReady'},
 	{name: 'didBecomeReady', listener: 'didBecomeReady'},
-	{name: 'willStop', listener: 'willStop'},
-	{name: 'didStop', listener: 'didStop'}
+	{name: 'didInit', listener: 'didInit'},
+	{name: 'didLoad', listener: 'didLoad'},
+	{name: 'didStart', listener: 'didStart'},
+	{name: 'didStop', listener: 'didStop'},
+	{name: 'willBecomeReady', listener: 'willBecomeReady'},
+	{name: 'willInit', listener: 'willInit'},
+	{name: 'willLoad', listener: 'willLoad'},
+	{name: 'willShutdown', listener: 'willShutdown'},
+	{name: 'willStart', listener: 'willStart'},
+	{name: 'willStop', listener: 'willStop'}
 ];
+
+export const PHASES = [...SERVER_PHASES, ...CLIENT_PHASES];

@@ -23,8 +23,7 @@
  *
  */
 
-import type {LifecycleClientDelegate} from '../client/delegate';
-import type {LifecycleServerDelegate} from '../server/delegate';
+import type {LifecycleListener} from '../listener';
 import {lifecyclePhaseListenerName} from '../phase/listener/name';
 
 /**
@@ -35,10 +34,7 @@ import {lifecyclePhaseListenerName} from '../phase/listener/name';
  *
  * @category Lifecycle
  */
-export async function lifecycleForEach(
-	objects: LifecycleClientDelegate[] | LifecycleServerDelegate,
-	phase: string
-): Promise<boolean> {
+export async function lifecycleForEach(objects: unknown[], phase: string): Promise<boolean> {
 	const listenerName = lifecyclePhaseListenerName(phase);
 
 	if (!listenerName) {
@@ -55,9 +51,17 @@ export async function lifecycleForEach(
 			continue;
 		}
 
-		const result = await o[listenerName]();
-		if (result) {
-			executionCount++;
+		const fn = o[listenerName] as LifecycleListener;
+		try {
+			const result = await fn();
+
+			if (result) {
+				executionCount++;
+			}
+		} catch (e: unknown) {
+			if (e instanceof Error) {
+				console.error(`lifecycleForEach callback exception: ${e.message}.`);
+			}
 		}
 	}
 

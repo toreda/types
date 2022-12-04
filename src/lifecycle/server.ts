@@ -24,9 +24,6 @@
  */
 
 import type {LifecycleServerData} from './server/data';
-import type {LifecycleServerPhase} from './server/phase';
-import {lifecycleServerPhases} from './server/phases';
-
 /**
  * Managed flags for lifecycle phases used by server-side lifecycle flows.
  *
@@ -44,6 +41,7 @@ export class LifecycleServer {
 	public willShutdown: boolean;
 	public willStart: boolean;
 	public willStop: boolean;
+	public willRestart: boolean;
 
 	constructor() {
 		this.willInit = false;
@@ -57,10 +55,19 @@ export class LifecycleServer {
 		this.willStop = false;
 		this.didStop = false;
 		this.willShutdown = false;
+		this.willRestart = false;
 	}
 
-	public execute(phase: LifecycleServerPhase): boolean {
-		if (!lifecycleServerPhases.has(phase)) {
+	public isPhase(value?: string | null | keyof LifecycleServer): value is keyof LifecycleServer {
+		if (typeof value !== 'string') {
+			return false;
+		}
+
+		return value in LifecycleServer;
+	}
+
+	public execute(phase: keyof LifecycleServer): boolean {
+		if (!this.isPhase(phase)) {
 			return false;
 		}
 
@@ -89,6 +96,7 @@ export class LifecycleServer {
 		this.willShutdown = false;
 		this.willStart = false;
 		this.willStop = false;
+		this.willRestart = false;
 	}
 
 	public toData(): LifecycleServerData {
@@ -103,7 +111,8 @@ export class LifecycleServer {
 			willLoad: this.willLoad,
 			willShutdown: this.willShutdown,
 			willStart: this.willStart,
-			willStop: this.willStop
+			willStop: this.willStop,
+			willRestart: this.willRestart
 		};
 	}
 }

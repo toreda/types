@@ -32,13 +32,16 @@ export type LifecycleNetworkCnxPhase =
 	| 'cnxDidClose'
 	| 'cnxDidConnect'
 	| 'cnxDidDisconnect'
+	| 'cnxDidFailClose'
 	| 'cnxDidFailConnect'
+	| 'cnxDidFailReconnect'
 	| 'cnxDidInit'
 	| 'cnxDidLoad'
 	| 'cnxDidOpen'
 	| 'cnxDidReconnect'
 	| 'cnxDidStartConnect'
 	| 'cnxDidStopConnect'
+	| 'cnxDidStopReconnect'
 	| 'cnxOnPing'
 	| 'cnxOnPong'
 	| 'cnxWillClose'
@@ -49,4 +52,5 @@ export type LifecycleNetworkCnxPhase =
 	| 'cnxWillOpen'
 	| 'cnxWillReconnect'
 	| 'cnxWillStartConnect'
-	| 'cnxWillStopConnect';
+	| 'cnxWillStopConnect'
+	| 'cnxWillStopReconnect';

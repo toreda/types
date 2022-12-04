@@ -69,9 +69,12 @@ export class Runnable<ArgDataT, ReturnT> {
 
 			outcome.execution.complete = true;
 			outcome.execution.exception = false;
-		} catch (e) {
+		} catch (e: unknown) {
+			if (e instanceof Error) {
+				outcome.execution.errors.push(e);
+			}
+
 			outcome.returnValue = null;
-			outcome.execution.errors.push(e);
 			outcome.execution.complete = false;
 			outcome.execution.exception = true;
 		}

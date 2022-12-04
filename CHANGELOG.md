@@ -1,5 +1,12 @@
 # [Unreleased]
 
+
+# [2.15.0] - 2022-09-04
+* Added `lifecyclePhaseOption` helper function to check phase options in lifecycle phase handlers.
+* Added `LifecyclePhaseOptions` with basic limit flags for recursive lifecycle phase handler invocation.
+* Changed `LifecycleClientDelegate` and `LifecycleServerDelegate` to extend the newly addded `LifecycleParent` interface.
+* Added `LifecycleParent` interface which makes an optional `children` property known to callers. `children` is a generic array of type `ValueT[]` whose type is defined by the caller. This property standardizes how child delegates are stored and used by `lifecyclePhase` to check for `children` during phase handling and recursively invoke their phase methods too.
+
 # [2.14.0] - 2022-05-20
 
 ## Added

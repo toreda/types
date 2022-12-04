@@ -3,7 +3,7 @@ import {lifecyclePhaseListenerName} from '../../../../src/lifecycle/phase/listen
 
 describe('lifecyclePhaseListenerName', () => {
 	for (const phase of PHASES) {
-		it(`should return listener namee '${phase.listener} for phase '${phase.name}`, () => {
+		it(`should return listener name '${phase.listener}' for phase '${phase.name}'`, () => {
 			expect(lifecyclePhaseListenerName(phase.name)).toBe(phase.listener);
 		});
 	}

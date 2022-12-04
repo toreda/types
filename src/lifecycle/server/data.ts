@@ -40,4 +40,5 @@ export interface LifecycleServerData {
 	willShutdown: boolean;
 	willStart: boolean;
 	willStop: boolean;
+	willRestart: boolean;
 }
