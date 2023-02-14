@@ -1,7 +1,9 @@
 import {LifecycleClient} from '../../src/lifecycle/client';
 import type {LifecycleClientDelegate} from '../../src/lifecycle/client/delegate';
+import {LifecycleClientPhase} from '../../src/lifecycle/client/phase';
 import {LifecycleServer} from '../../src/lifecycle/server';
 import type {LifecycleServerDelegate} from '../../src/lifecycle/server/delegate';
+import {LifecycleServerPhase} from '../../src/lifecycle/server/phase';
 
 export class SampleServer implements LifecycleServerDelegate {
 	public readonly lifecycle: LifecycleServer;
@@ -144,7 +146,10 @@ export class SampleClient implements LifecycleClientDelegate {
 
 export const ADDON_PHASES = [];
 
-export const CLIENT_PHASES = [
+export const CLIENT_PHASES: {
+	name: string;
+	listener: LifecycleClientPhase;
+}[] = [
 	{name: 'didBecomeReady', listener: 'didBecomeReady'},
 	{name: 'willLoseFocus', listener: 'willLoseFocus'},
 	{name: 'didGainFocus', listener: 'didGainFocus'},
@@ -164,15 +169,29 @@ export const CLIENT_PHASES = [
 	{name: 'willStop', listener: 'willStop'}
 ];
 
-export const SERVER_PHASES = [
+export const SERVER_PHASES: {
+	name: string;
+	listener: LifecycleServerPhase;
+}[] = [
 	{name: 'didBecomeReady', listener: 'didBecomeReady'},
 	{name: 'didInit', listener: 'didInit'},
 	{name: 'didLoad', listener: 'didLoad'},
 	{name: 'didStart', listener: 'didStart'},
 	{name: 'didStop', listener: 'didStop'},
+	{name: 'didRestart', listener: 'didRestart'},
+	{name: 'didShutdown', listener: 'didShutdown'},
+	{name: 'didStart', listener: 'didStart'},
+	{name: 'onInit', listener: 'onInit'},
+	{name: 'onLoad', listener: 'onLoad'},
+	{name: 'onReady', listener: 'onReady'},
+	{name: 'onRestart', listener: 'onRestart'},
+	{name: 'onShutdown', listener: 'onShutdown'},
+	{name: 'onStart', listener: 'onStart'},
+	{name: 'onStop', listener: 'onStop'},
 	{name: 'willBecomeReady', listener: 'willBecomeReady'},
 	{name: 'willInit', listener: 'willInit'},
 	{name: 'willLoad', listener: 'willLoad'},
+	{name: 'willRestart', listener: 'willRestart'},
 	{name: 'willShutdown', listener: 'willShutdown'},
 	{name: 'willStart', listener: 'willStart'},
 	{name: 'willStop', listener: 'willStop'}

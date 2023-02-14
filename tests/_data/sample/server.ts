@@ -65,14 +65,6 @@ export class SampleServer implements LifecycleServerDelegate {
 	}
 
 	public reset(): void {
-		this.lifecycle.willInit = false;
-		this.lifecycle.didInit = false;
-		this.lifecycle.willLoad = false;
-		this.lifecycle.didLoad = false;
-		this.lifecycle.didStart = false;
-		this.lifecycle.willStart = false;
-		this.lifecycle.willStop = false;
-		this.lifecycle.didStop = false;
-		this.lifecycle.willShutdown = false;
+		this.lifecycle.reset();
 	}
 }

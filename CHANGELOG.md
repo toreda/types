@@ -1,24 +1,29 @@
 # [Unreleased]
 
+# [2.16.0] - 2023-02-14
+-   Moved all `Lifecycle` related files into new `@toreda/lifecycle` NPM package project. `@toreda/types` is intended to include expressive types with minimal or no functions that need to be included in the final build. The lifecycle functionality is useful and needs to be expanded, thus has its own package now.
 
 # [2.15.0] - 2022-09-04
-* Added `lifecyclePhaseOption` helper function to check phase options in lifecycle phase handlers.
-* Added `LifecyclePhaseOptions` with basic limit flags for recursive lifecycle phase handler invocation.
-* Changed `LifecycleClientDelegate` and `LifecycleServerDelegate` to extend the newly addded `LifecycleParent` interface.
-* Added `LifecycleParent` interface which makes an optional `children` property known to callers. `children` is a generic array of type `ValueT[]` whose type is defined by the caller. This property standardizes how child delegates are stored and used by `lifecyclePhase` to check for `children` during phase handling and recursively invoke their phase methods too.
+
+-   Added `lifecyclePhaseOption` helper function to check phase options in lifecycle phase handlers.
+-   Added `LifecyclePhaseOptions` with basic limit flags for recursive lifecycle phase handler invocation.
+-   Changed `LifecycleClientDelegate` and `LifecycleServerDelegate` to extend the newly addded `LifecycleParent` interface.
+-   Added `LifecycleParent` interface which makes an optional `children` property known to callers. `children` is a generic array of type `ValueT[]` whose type is defined by the caller. This property standardizes how child delegates are stored and used by `lifecyclePhase` to check for `children` during phase handling and recursively invoke their phase methods too.
 
 # [2.14.0] - 2022-05-20
 
 ## Added
-* `LangCode` identifying localization language used in other localization systems.
-* Entity Lifecycle types: `LifecycleEntity`, `LifecycleEntityData`, `LifecycleEntityDelegate`, and `LifecycleEntityPhase`.
-* Addon Lifecycle types: `LifecycleAddon`, `LifecycleAddonData`, `LifecycleAddonDelegate`, and `LifecycleAddonPhase`.
-* `cnxWillReconnect`, `cnxDidReconnect`, `cnxWillInit`, `cnxDidInit`, `cnxWillLoad`, and `cnxDidLoad` added connection lifecycle flow.
+
+-   `LangCode` identifying localization language used in other localization systems.
+-   Entity Lifecycle types: `LifecycleEntity`, `LifecycleEntityData`, `LifecycleEntityDelegate`, and `LifecycleEntityPhase`.
+-   Addon Lifecycle types: `LifecycleAddon`, `LifecycleAddonData`, `LifecycleAddonDelegate`, and `LifecycleAddonPhase`.
+-   `cnxWillReconnect`, `cnxDidReconnect`, `cnxWillInit`, `cnxDidInit`, `cnxWillLoad`, and `cnxDidLoad` added connection lifecycle flow.
 
 # [2.13.1] - 2022-05-15
 
 ## Fixed
-- Erroneous 'src/' prefix in `LifecycleNetworkCnxDelegate` removed and replace with correct relative path. Could break imports before fix.
+
+-   Erroneous 'src/' prefix in `LifecycleNetworkCnxDelegate` removed and replace with correct relative path. Could break imports before fix.
 
 # [2.13.0] - 2022-05-12
 
