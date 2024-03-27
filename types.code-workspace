@@ -30,6 +30,8 @@
 			".github": true,
 			"test-report.xml": true,
 			"reports/**": true
-		}
+		},
+		"javascript.preferences.importModuleSpecifier": "relative",
+		"typescript.preferences.importModuleSpecifier": "relative"
 	}
 }
